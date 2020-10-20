@@ -27,6 +27,7 @@ CREATE TABLE [Notice].[Class] (
 	[ClassName]		 NVARCHAR (50)	UNIQUE NOT NULL,
     [TeacherId]		 INT			NULL
 	CONSTRAINT FK_Class_To_Teacher  FOREIGN KEY (TeacherId) REFERENCES Notice.SchoolWorker(Id)
+	ON UPDATE CASCADE ON DELETE SET NULL
 );
 GO
 
@@ -39,12 +40,13 @@ CREATE TABLE [Notice].[Pupil] (
     [LastName]		NVARCHAR (50)     NOT NULL,
 	[FirstName]		NVARCHAR (50)     NOT NULL,
 	[Patronymic]	NVARCHAR (50)     NULL,
-	[ClassId]		INT				  NOT NULL,
+	[ClassId]		INT				  NULL,
 	[Email]			NVARCHAR (50)     NULL,
 	[PhoneNumber]	NVARCHAR (50)     NULL,
 	[DateOfBirth]	DATETIME		  NULL,
 	[TypeOfUser]	NVARCHAR (1)      DEFAULT('P') NOT NULL,
 	CONSTRAINT FK_Pupil_To_Class FOREIGN KEY (ClassId) REFERENCES Notice.Class(Id)
+	ON UPDATE CASCADE ON DELETE SET NULL
 );
 GO
 
@@ -72,6 +74,7 @@ CREATE TABLE [Notice].[Event] (
 	[Description]		NVARCHAR (350)	NULL,
 	[DateOfEvent]		DATETIME		NULL
 	CONSTRAINT FK_Event_To_SchoolWorker FOREIGN KEY (AuthorId) REFERENCES Notice.SchoolWorker(Id)
+	ON UPDATE CASCADE ON DELETE CASCADE
 );
 GO
 
@@ -83,7 +86,8 @@ CREATE TABLE [Notice].[Notifying] (
 	[TypeOfUser]		NVARCHAR (1)    NOT NULL,
 	[Status]			INT				DEFAULT (1) NOT NULL
 	CONSTRAINT PK_Notifying PRIMARY KEY (EventId, RecipientId, TypeOfUser),
-	CONSTRAINT FK_Notifying_To_Event FOREIGN KEY (EventId) REFERENCES Notice.Event(Id),
+	CONSTRAINT FK_Notifying_To_Event FOREIGN KEY (EventId) REFERENCES Notice.Event(Id)
+	ON UPDATE CASCADE ON DELETE CASCADE,
 	CONSTRAINT FK_Notifying_To_Pupil FOREIGN KEY (RecipientId) REFERENCES Notice.Pupil(Id),
 	CONSTRAINT FK_Notifying_To_SchoolWorker FOREIGN KEY (RecipientId) REFERENCES Notice.SchoolWorker(Id),
 	CONSTRAINT Check_Notifying_TypeOfUser CHECK (TypeOfUser IN('P', 'T', 'A')),
