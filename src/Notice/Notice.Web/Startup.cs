@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Notice.DAL;
+using Notice.DAL.Interfaces;
+using Notice.DAL.Repositories;
 
 namespace Notice.Web
 {
@@ -22,7 +25,16 @@ namespace Notice.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddMvc();
+
+            services.Configure<DbConnection>(Configuration.GetSection(DbConnection.ConnectionStrings));
+
+            services.AddTransient<IBaseRepository, BaseRepository>();
+
+            services.AddControllersWithViews(options =>
+            {
+                options.EnableEndpointRouting = false;
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -44,11 +56,11 @@ namespace Notice.Web
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                endpoints.MapControllerRoute(
+                routes.MapRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
