@@ -1,0 +1,219 @@
+body
+{
+    margin: 0;
+    min-width: 900px;
+}
+.div_header
+{
+    display: flex;
+}
+header
+{
+    text-align: center;
+}
+.right_pos
+{
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.div_link
+{
+    margin: 2em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #34B9BE;
+}
+.div_link:hover
+{
+    color: black;
+}
+hr
+{
+    height: 0.1em;
+    width: 100%;
+    color: #34B9BE;
+    background-color: #34B9BE;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.image
+{
+    margin-top: 0.5em;
+}
+.right
+{
+    width: 70%;
+    padding: 2em;
+    padding-left: 4em;
+    margin-right: auto;
+    align-items: center;
+    background-color:rgba(52, 185, 190,0.75);
+}
+.left
+{
+    width: 30%;
+    border-right: 0.18em solid white;
+    margin: 0;
+    background-color:rgba(52, 185, 190,0.75);
+}
+.btn
+{
+    padding-left: 0.3em;
+    color: #34B9BE;
+    background-color: white;
+    width: 100%;
+    font-size: 2.5em;
+    text-align: left;
+    padding: 0.5em;
+    border: 2px solid #34B9BE;
+}
+.hide
+{
+    padding: 1em;
+}
+.flex
+{
+    display: flex;
+}
+.check
+{
+    padding-left: 1em;
+    padding-right: 0.5em;
+    width: 100%;
+    line-height: 1.3em;
+    font-size: 1.5em;
+}
+.check1
+{
+    padding-left: 1.5em;
+}
+.search
+{
+    font-size: 3em;
+    line-height: 0.5em;
+    display: flex;
+    color: white;
+    text-align: center;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+.search input
+{
+    height: 3em;
+    width: 40rem;
+    border: 0.2em solid white;
+}
+.search label
+{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 1.5em;
+}
+.user
+{
+    display: flex;
+    justify-content: space-between;
+    width:40rem;
+    border: 0.2em solid white;
+    background-color: white;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+.class
+{
+    display: flex;
+    justify-content: space-between;
+    width:40.5rem;
+    border: 0.2em solid white;
+    background-color: white;
+    margin-bottom: 1em;
+    padding-left: 1em;
+}
+.class_user
+{
+    display: flex;
+    justify-content: space-between;
+    width:39.8rem;
+    border: 0.2em solid white;
+    background-color: white;
+    margin-bottom: 2em;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.5em;
+}
+.img_small img
+{
+    width:100px;
+}
+.img_small
+{
+    margin-top: 1em;
+}
+.user-text
+{
+    font-size: 1em;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+.user-text h3
+{
+    font-family: "ui-monospace";
+    margin: 1em;
+}
+.btn_user
+{
+    border: none;
+    background-color: white;
+    align-items: end;
+}
+.btn_user img
+{
+    margin-right: auto;
+}
+.users,
+.classes
+{
+    justify-content: center;
+    padding-left: 3em;
+}
+.sear
+{
+    width: 45rem;
+}
+.check
+{
+    overflow: hidden;
+}
+.check1
+{
+    overflow: hidden;
+}
+.left
+{
+    float: left;
+}
+.right
+{
+    float: right;
+}
+.img_rotate
+{
+    -moz-transform: rotate(90deg); /* Для Firefox */
+    -ms-transform: rotate(90deg); /* Для IE */
+    -webkit-transform: rotate(90deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(90deg); /* Для Opera */
+    transform: rotate(90deg);
+}
+@media screen and(max-width: 900px) {
+    body{
+        overflow: scroll;
+    }
+}
+nav
+{
+    width: 40rem;
+}
+
