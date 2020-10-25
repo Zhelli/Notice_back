@@ -78,19 +78,34 @@ CREATE TABLE [Notice].[Event] (
 );
 GO
 
-PRINT N'Creating Notice.Notifying...';
+PRINT N'Creating Notice.NotifyingPupil...';
 GO
-CREATE TABLE [Notice].[Notifying] (
-    [EventId]			INT				NOT NULL,
-	[RecipientId]		INT				NOT NULL,
-	[TypeOfUser]		NVARCHAR (1)    NOT NULL,
-	[Status]			INT				DEFAULT (1) NOT NULL
-	CONSTRAINT PK_Notifying PRIMARY KEY (EventId, RecipientId, TypeOfUser),
-	CONSTRAINT FK_Notifying_To_Event FOREIGN KEY (EventId) REFERENCES Notice.Event(Id)
+CREATE TABLE [Notice].[NotifyingPupil] (
+    [EventId]				INT				NOT NULL,
+	[RecipientPupilId]		INT				NOT NULL,
+	[TypeOfUser]			NVARCHAR (1)    NOT NULL,
+	[Status]				INT				DEFAULT (1) NOT NULL
+	CONSTRAINT PK_NotifyingPupil PRIMARY KEY (EventId, RecipientPupilId, TypeOfUser),
+	CONSTRAINT FK_NotifyingPupil_To_Event FOREIGN KEY (EventId) REFERENCES Notice.Event(Id)
 	ON UPDATE CASCADE ON DELETE CASCADE,
-	CONSTRAINT FK_Notifying_To_Pupil FOREIGN KEY (RecipientId) REFERENCES Notice.Pupil(Id),
-	CONSTRAINT FK_Notifying_To_SchoolWorker FOREIGN KEY (RecipientId) REFERENCES Notice.SchoolWorker(Id),
-	CONSTRAINT Check_Notifying_TypeOfUser CHECK (TypeOfUser IN('P', 'T', 'A')),
-	CONSTRAINT Check_Notifying_Status CHECK (TypeOfUser IN(0, 1))  -- 1 - unread, 0 - read
+	CONSTRAINT FK_NotifyingPupil_To_Pupil FOREIGN KEY (RecipientPupilId) REFERENCES Notice.Pupil(Id),
+	CONSTRAINT Check_NotifyingPupil_TypeOfUser CHECK (TypeOfUser IN('P')),
+	CONSTRAINT Check_NotifyingPupil_Status CHECK (Status IN(0, 1))  -- 1 - unread, 0 - read
+);
+GO
+
+PRINT N'Creating Notice.NotifyingSchoolWorker...';
+GO
+CREATE TABLE [Notice].[NotifyingSchoolWorker] (
+    [EventId]				INT				NOT NULL,
+	[RecipientTeacherId]	INT				NOT NULL,
+	[TypeOfUser]			NVARCHAR (1)    NOT NULL,
+	[Status]				INT				DEFAULT (1) NOT NULL
+	CONSTRAINT PK_NotifyingTeacher PRIMARY KEY (EventId, RecipientTeacherId, TypeOfUser),
+	CONSTRAINT FK_NotifyingTeacher_To_Event FOREIGN KEY (EventId) REFERENCES Notice.Event(Id)
+	ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT FK_NotifyingTeacher_To_SchoolWorker FOREIGN KEY (RecipientTeacherId) REFERENCES Notice.SchoolWorker(Id),
+	CONSTRAINT Check_NotifyingTeacher_TypeOfUser CHECK (TypeOfUser IN('T', 'A')),
+	CONSTRAINT Check_NotifyingTeacher_Status CHECK (Status IN(0, 1))  -- 1 - unread, 0 - read
 );
 GO
