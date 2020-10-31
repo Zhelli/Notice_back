@@ -1,6 +1,6 @@
 using System;
 
-namespace Notice.Web.Models
+namespace Notice.Web.ViewModels
 {
     public class ErrorViewModel
     {

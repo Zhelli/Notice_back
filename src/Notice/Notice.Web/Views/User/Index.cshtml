@@ -1,5 +1,6 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "Users";
 }
 
 <div class="flex">
@@ -50,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <a asp-page="/User/AddingUser"><button class="btn">Add User</button></a>
+        <a asp-controller="User" asp-action="AddingUser" class="btn">Add User</a>
     </div>
     <div class="right">
         <div class="sear">
@@ -66,7 +67,7 @@
                     <h3>Class 1-A</h3>
                 </div>
                 <div class="right_user">
-                    <button class="btn_user"><img src="~/function.png"></button>
+                    <button class="btn_user"><img src="./img/function.png"></button>
                 </div>
             </div>
             <div class="user">
@@ -75,7 +76,7 @@
                     <h3>Class 1-A</h3>
                 </div>
                 <div class="right_user">
-                    <button class="btn_user"><img src="~/function.png"></button>
+                    <button class="btn_user"><img src="./img/function.png"></button>
                 </div>
             </div>
             <div class="user">
@@ -84,9 +85,8 @@
                     <h3>Class 1-A</h3>
                 </div>
                 <div class="right_user">
-                    <button class="btn_user"><img src="~/function.png"></button>
+                    <button class="btn_user"><img src="./img/function.png"></button>
                 </div>
             </div>
         </div>
     </div>
-</div>
