@@ -1,0 +1,201 @@
+﻿body {
+    margin: 0;
+    min-width: 900px;
+    background-color: rgba(52, 185, 190,0.75);
+}
+
+.div_header {
+    display: flex;
+}
+
+header {
+    text-align: center;
+    background-color: white;
+}
+
+.right_pos {
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.div_link {
+    margin: 2em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+    color: #34B9BE;
+}
+
+    .div_link:hover {
+        color: black;
+    }
+
+hr {
+    height: 0.1em;
+    width: 100%;
+    color: white;
+    background-color: white;
+    border: 0px;
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+.center {
+    margin-top: 4em;
+    width:80%;
+    font-size: 1.2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.m-2 {
+    margin-bottom: 3%;
+}
+
+    .m-2 h2 {
+        margin: 0;
+    }
+
+.up {
+    font-family: fantasy;
+}
+
+.two {
+    display: flex;
+    margin-left: -6%;
+}
+
+.last {
+    margin-bottom: 2em;
+}
+
+    .last h2 {
+        margin: 0;
+    }
+
+.two_left {
+    width: 30%;
+    margin-left: 20%;
+    margin-right: 5%;
+}
+
+.two_right {
+    width: 30%;
+}
+
+.button {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+    .button a {
+        text-decoration: none;
+        color: white;
+    }
+
+        .button a:hover {
+            text-decoration: none;
+            border-bottom: 2px solid white;
+        }
+
+input,
+select {
+    margin-top: 0.5em;
+    height: 2em;
+    font-size: 1em;
+}
+
+.probel {
+    margin-right: 25%;
+}
+
+input {
+    width: 100%;
+}
+
+    input[type='date']:after {
+        content: attr(placeholder)
+    }
+
+select {
+    width: 101%;
+    height: 2.5em;
+}
+
+.center_add {
+    margin-top: 1em;
+    margin-left: 2.2em;
+}
+
+.PupilsClass {
+    padding: 1em;
+    background-color: white;
+    width: 65%;
+    margin-left: 15%;
+    text-align: center;
+    margin-bottom: 2em;
+}
+.thing_some {
+    width:66%;
+    height: 2.5em;
+    margin-left:20%;
+    margin-bottom: 2%;
+}
+.pupilblue {
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    border: 2px solid #34B9BE;
+}
+
+.centerbutton {
+    padding-left: 53%;
+    margin-bottom: 2em;
+}
+
+.btn {
+    padding-left: 0.3em;
+    color: #34B9BE;
+    background-color: white;
+    width: 70%;
+    font-size: 1em;
+    text-align: center;
+    padding: 0.5em;
+    border: 2px solid #34B9BE;
+}
+
+.shedule_day {
+    background-color: white;
+    width: 67%;
+    padding: 1em;
+    text-align: center;
+    padding-bottom: 3em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2em;
+}
+
+    .shedule_day h3 {
+        font-size: 2em;
+    }
+
+    .shedule_day table {
+        width: 100%;
+        border: 2px solid #34B9BE;
+        margin-bottom: 2em;
+    }
+
+        .shedule_day table tr {
+            height: 3em;
+        }
+
+            .shedule_day table tr th {
+                border: 1px solid #34B9BE;
+            }

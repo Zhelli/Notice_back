@@ -1,0 +1,47 @@
+﻿<Properties StartupConfiguration="{974B610A-0895-4C94-9D51-9C70E7F8D275}|Default">
+  <MonoDevelop.Ide.ItemProperties.Notice.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Notice.Web/Controllers/SheduleController.cs">
+    <Files>
+      <File FileName="Notice.Web/Views/Class/EditClass.cshtml" Line="18" Column="32" />
+      <File FileName="Notice.Web/Views/Class/Profile.cshtml" Line="48" Column="64" />
+      <File FileName="Notice.Web/Views/User/EditUser.cshtml" Line="62" Column="63" />
+      <File FileName="Notice.Web/Controllers/UserController.cs" Line="1" Column="1" />
+      <File FileName="Notice.Web/Views/User/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Notice.Web/Views/User/Profile.cshtml" Line="70" Column="8" />
+      <File FileName="Notice.Web/Views/Shedule/Index.cshtml" Line="155" Column="19" />
+      <File FileName="Notice.Web/Views/Shedule/AddShedule.cshtml" Line="1" Column="1" />
+      <File FileName="Notice.Web/Controllers/ClassController.cs" Line="26" Column="39" />
+      <File FileName="Notice.Web/Controllers/SheduleController.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Notice" expanded="True">
+            <Node name="Notice.Web" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="SheduleController.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Class" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+                <Node name="Shedule" expanded="True" />
+                <Node name="User" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+                <Node name="js" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
