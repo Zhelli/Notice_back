@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Notice.Web.Models;
+using Notice.Web.ViewModels;
 
 namespace Notice.Web.Controllers
 {
@@ -19,11 +19,6 @@ namespace Notice.Web.Controllers
         }
 
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }
