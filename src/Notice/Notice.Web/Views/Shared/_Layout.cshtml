@@ -4,9 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Notice</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @RenderSection("Head")
+
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/header.css" />
+    <link rel="stylesheet" href="~/css/header.css" />*@
+
 </head>
 <body>
     <header>
@@ -14,8 +17,8 @@
             <a asp-controller="Home" asp-action="Index"><img src="~/logo1.png" class="image"></a>
             <div class="right_pos">
                 <a asp-controller="User" asp-action="Index" class="div_link">Users</a>
-                <a href="#" class="div_link">Classes</a>
-                <a href="#" class="div_link">Schedule</a>
+                <a asp-controller="Class" asp-action="Index" class="div_link">Classes</a>
+                <a asp-controller="Schedule" asp-action="Index" class="div_link">Schedule</a>
             </div>
         </div>
     </header>
@@ -26,6 +29,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+   
     @RenderSection("Scripts", required: false)
 </body>
 </html>

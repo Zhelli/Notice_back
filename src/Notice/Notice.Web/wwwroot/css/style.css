@@ -1,0 +1,256 @@
+﻿body {
+    margin: 0;
+}
+
+.div_header {
+    display: flex;
+}
+
+header {
+    text-align: center;
+}
+
+.right_pos {
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.right_user {
+    display: grid;
+}
+
+.div_link {
+    margin: 2em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+    color: #34B9BE;
+}
+
+    .dropdown-item:hover,
+    .div_link:hover {
+        color: black;
+    }
+
+.dropdown-item,
+.link {
+    color: #34B9BE;
+    background-color: white;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+}
+
+hr {
+    height: 0.1em;
+    width: 100%;
+    color: #34B9BE;
+    background-color: #34B9BE;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.image {
+    margin-top: 0.5em;
+}
+
+.right {
+    width: 70%;
+    padding: 2em;
+    padding-left: 4em;
+    margin-right: auto;
+    align-items: center;
+    background-color: rgba(52, 185, 190,0.75);
+}
+
+.left {
+    width: 30%;
+    border-right: 0.18em solid white;
+    margin: 0;
+    background-color: rgba(255, 255, 255,1);
+}
+
+.btn {
+    padding-left: 0.3em;
+    color: #34B9BE;
+    background-color: white;
+    width: 100%;
+    font-size: 2.5em;
+    text-align: left;
+    padding: 0.5em;
+    border: 2px solid #34B9BE;
+}
+
+.filter {
+    padding-left: 0.3em;
+    color: #34B9BE;
+    background-color: white;
+    font-size: 2.5em;
+    text-align: left;
+    padding: 0.5em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+}
+
+.hide {
+    padding: 1em;
+}
+
+.flex {
+    display: flex;
+}
+
+.check {
+    padding: 1em;
+    width: 90%;
+    line-height: 1.3em;
+    font-size: 1.5em;
+    background-color: rgba(52, 185, 190,0.75);
+}
+
+.check1 {
+    padding-left: 1.5em;
+}
+
+.search {
+    font-size: 3em;
+    line-height: 0.5em;
+    display: flex;
+    color: white;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+    .search input {
+        height: 3em;
+        width: 100%;
+        border: 0.2em solid white;
+    }
+
+    .search label {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 1.5em;
+    }
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    border: 0.2em solid white;
+    background-color: white;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+.class {
+    display: flex;
+    justify-content: space-between;
+    border: 0.2em solid white;
+    background-color: white;
+    margin-bottom: 1em;
+    padding-left: 1em;
+}
+
+.class_user {
+    display: flex;
+    justify-content: space-between;
+    border: 0.2em solid white;
+    background-color: white;
+    margin-bottom: 2em;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.5em;
+}
+
+.img_small img {
+    width: 100px;
+}
+
+.img_small {
+    margin-top: 1em;
+}
+
+.user-text {
+    font-size: 1em;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+    .user-text h3 {
+        font-family: "ui-monospace";
+        margin: 1em;
+    }
+
+.btn_user {
+    border: none;
+    background-color: white;
+    align-items: end;
+}
+
+    .btn_user img {
+        margin-right: auto;
+    }
+
+.users,
+.classes {
+    justify-content: center;
+}
+
+.sear {
+    width: 100%;
+}
+
+.check {
+    overflow: hidden;
+}
+
+.check1 {
+    overflow: hidden;
+}
+
+.left {
+    float: left;
+    background-color: white;
+}
+
+.right {
+    float: right;
+}
+
+.img_rotate {
+    -moz-transform: rotate(90deg); /* Для Firefox */
+    -ms-transform: rotate(90deg); /* Для IE */
+    -webkit-transform: rotate(90deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(90deg); /* Для Opera */
+    transform: rotate(90deg);
+}
+
+nav {
+    width: 40rem;
+}
+
+.shedule_day {
+    background-color: white;
+    padding: 1em;
+    text-align: center;
+    padding-bottom: 3em;
+}
+
+    .shedule_day h3 {
+        font-size: 2em;
+    }
+
+    .shedule_day table {
+        width: 100%;
+        border: 2px solid #34B9BE;
+    }
+
+        .shedule_day table tr {
+            height: 3em;
+        }
+
+            .shedule_day table tr th {
+                border: 1px solid #34B9BE;
+            }

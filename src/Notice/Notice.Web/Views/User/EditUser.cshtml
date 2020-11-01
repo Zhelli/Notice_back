@@ -1,6 +1,10 @@
 ﻿
 @{
-    ViewData["Title"] = "Adding user";
+    ViewData["Title"] = "Edit user";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/styleprofile.css">
 }
 
 <div class="center">
@@ -8,51 +12,44 @@
         <div class="thing m-2 two_left">
             <h2 class="up">Name</h2>
             <hr>
-            <input type="text" id="name">
+            <input type="text" id="name" placeholder="Petr">
         </div>
         <div class="thing m-2 two_right">
             <h2 class="up">Surname</h2>
             <hr>
-            <input type="text" id="surname">
+            <input type="text" id="surname" placeholder="Petrov">
         </div>
     </div>
     <div class="two">
         <div class="thing m-2 two_left">
             <h2 class="up">Patronymic</h2>
             <hr>
-            <input type="text" id="patronymic">
+            <input type="text" id="patronymic" placeholder="Petrovich">
         </div>
         <div class="thing m-2 two_right">
             <h2 class="up">Birthday</h2>
             <hr>
-            <input type="date" id="birthday">
+            <input type="date" id="birthday" placeholder="01.01.2011">
         </div>
     </div>
     <div class="two">
         <div class="thing m-2 two_left">
             <h2 class="up">Phone</h2>
             <hr>
-            <input type="text" id="phone">
+            <input type="text" id="phone" placeholder="09712345678">
         </div>
         <div class="thing m-2 two_right">
             <h2 class="up">E-mail</h2>
             <hr>
-            <input type="text" id="email">
+            <input type="text" id="email" placeholder="petr.petrov@gmail.com">
         </div>
     </div>
     <div class="two">
-        <div class="thing m-2 two_left last">
-            <h2 class="up">Role</h2>
-            <hr>
-            <select class="combo">
-                <option value="Select">Select....</option>
-                <option value="pupil">Pupil</option>
-                <option value="teacher">Teacher</option>
-                <option value="administrator">Administrator</option>
-            </select>
+        <div class="button m-2 two_left">
+            <a asp-controller="User" asp-action="Index">Update</a>
         </div>
-        <div class="button m-2 two_right last">
-            <a href="">Add</a>
+        <div class="button m-2 two_right">
+            <a href="">Delete</a>
         </div>
     </div>
 </div>

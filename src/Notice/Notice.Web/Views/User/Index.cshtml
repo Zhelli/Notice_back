@@ -3,8 +3,14 @@
     ViewData["Title"] = "Users";
 }
 
+@section Head {
+    <link rel="stylesheet" href="~/css/style.css">
+}
+
 <div class="flex">
     <div class="left">
+        <button class="btn"><a class="link" asp-controller="User" asp-action="AddUser">Add User</a></button>
+        <h3 class="filter"><i>Filtering</i></h3>
         <button class="btn" onclick="ShowUsers()">Users</button>
         <div class="hide" id="hide">
             <div class="check">
@@ -51,7 +57,6 @@
                 </div>
             </div>
         </div>
-        <a asp-controller="User" asp-action="AddingUser" class="btn">Add User</a>
     </div>
     <div class="right">
         <div class="sear">
@@ -67,7 +72,9 @@
                     <h3>Class 1-A</h3>
                 </div>
                 <div class="right_user">
-                    <button class="btn_user"><img src="./img/function.png"></button>
+                    <a class="dropdown-item" asp-controller="User" asp-action="Profile">Information</a>
+                    <a class="dropdown-item" asp-controller="User" asp-action="EditUser">Edit</a>
+                    <a class="dropdown-item" href="#">Delete</a>
                 </div>
             </div>
             <div class="user">
@@ -76,7 +83,9 @@
                     <h3>Class 1-A</h3>
                 </div>
                 <div class="right_user">
-                    <button class="btn_user"><img src="./img/function.png"></button>
+                    <a class="dropdown-item" asp-controller="User" asp-action="Profile">Information</a>
+                    <a class="dropdown-item" asp-controller="User" asp-action="EditUser">Edit</a>
+                    <a class="dropdown-item" href="#">Delete</a>
                 </div>
             </div>
             <div class="user">
@@ -85,8 +94,15 @@
                     <h3>Class 1-A</h3>
                 </div>
                 <div class="right_user">
-                    <button class="btn_user"><img src="./img/function.png"></button>
+                    <a class="dropdown-item" asp-controller="User" asp-action="Profile">Information</a>
+                    <a class="dropdown-item" asp-controller="User" asp-action="EditUser">Edit</a>
+                    <a class="dropdown-item" href="#">Delete</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/admin.js"></script>
+}
