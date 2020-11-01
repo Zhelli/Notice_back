@@ -5,11 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-<<<<<<< HEAD
-using Notice.Web.ViewModels;
-=======
 using Notice.Web.Models;
->>>>>>> main
 
 namespace Notice.Web.Controllers
 {
@@ -27,14 +23,11 @@ namespace Notice.Web.Controllers
             return View();
         }
 
-<<<<<<< HEAD
-=======
         public IActionResult Privacy()
         {
             return View();
         }
 
->>>>>>> main
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

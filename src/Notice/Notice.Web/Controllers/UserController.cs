@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-<<<<<<< HEAD
-using Notice.Web.ViewModels;
-=======
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
->>>>>>> main
 
 namespace Notice.Web.Controllers
 {
@@ -18,16 +14,6 @@ namespace Notice.Web.Controllers
         {
             return View();
         }
-<<<<<<< HEAD
-
-        public IActionResult AddingUser(UserViewModel userModel)
-        {
-            
-            return View();
-        }
-    }
-}
-=======
         public IActionResult AddUser()
         {
             return View();
@@ -42,4 +28,3 @@ namespace Notice.Web.Controllers
         }
     }
 }
->>>>>>> main

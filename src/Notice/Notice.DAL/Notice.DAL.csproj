@@ -1,25 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-<<<<<<< HEAD
-=======
     <OutputType>Exe</OutputType>
->>>>>>> main
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Entities\" />
-<<<<<<< HEAD
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.9" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
-=======
     <Folder Include="Interfaces\" />
     <Folder Include="Repositories\" />
->>>>>>> main
   </ItemGroup>
 
 </Project>

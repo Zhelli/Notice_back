@@ -4,18 +4,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-<<<<<<< HEAD
-  <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Notice.DAL\Notice.DAL.csproj" />
-  </ItemGroup>
-
-
-
-=======
 
 
   <ItemGroup>
@@ -32,5 +20,4 @@
     <Folder Include="Views\Class\" />
     <Folder Include="Views\Shedule\" />
   </ItemGroup>
->>>>>>> main
 </Project>

@@ -3,14 +3,14 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Notice.Web/Controllers/SheduleController.cs">
     <Files>
       <File FileName="Notice.Web/Views/Class/EditClass.cshtml" Line="18" Column="32" />
-      <File FileName="Notice.Web/Views/Class/Profile.cshtml" Line="48" Column="64" />
-      <File FileName="Notice.Web/Views/User/EditUser.cshtml" Line="62" Column="63" />
-      <File FileName="Notice.Web/Controllers/UserController.cs" Line="1" Column="1" />
-      <File FileName="Notice.Web/Views/User/Index.cshtml" Line="1" Column="1" />
-      <File FileName="Notice.Web/Views/User/Profile.cshtml" Line="70" Column="8" />
-      <File FileName="Notice.Web/Views/Shedule/Index.cshtml" Line="155" Column="19" />
-      <File FileName="Notice.Web/Views/Shedule/AddShedule.cshtml" Line="1" Column="1" />
-      <File FileName="Notice.Web/Controllers/ClassController.cs" Line="26" Column="39" />
+      <File FileName="Notice.Web/Views/Class/Profile.cshtml" />
+      <File FileName="Notice.Web/Views/User/EditUser.cshtml" />
+      <File FileName="Notice.Web/Controllers/UserController.cs" />
+      <File FileName="Notice.Web/Views/User/Index.cshtml" />
+      <File FileName="Notice.Web/Views/User/Profile.cshtml" />
+      <File FileName="Notice.Web/Views/Shedule/Index.cshtml" />
+      <File FileName="Notice.Web/Views/Shedule/AddShedule.cshtml" />
+      <File FileName="Notice.Web/Controllers/ClassController.cs" />
       <File FileName="Notice.Web/Controllers/SheduleController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
