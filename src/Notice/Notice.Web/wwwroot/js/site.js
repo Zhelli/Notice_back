@@ -2,6 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+<<<<<<< HEAD
 document.getElementById('hide').hidden = true;
 document.getElementById('hidetwo').hidden = true;
 let user = 0;
@@ -26,3 +27,5 @@ function ShowClass() {
         form++;
     }
 }
+=======
+>>>>>>> main
