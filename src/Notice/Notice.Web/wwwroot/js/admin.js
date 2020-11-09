@@ -1,27 +1,34 @@
-﻿if (document.getElementById('hide').hidden !== null) {
+
+if (document.getElementById('hide').hidden !== null) {
     document.getElementById('hide').hidden = true;
 }
-if (document.getElementById('hidetwo').hidden !== null) {
+if(document.getElementById('hidetwo').hidden !== null){
     document.getElementById('hidetwo').hidden = true;
 }
 let user = 0;
 let form = 0;
-function ShowUsers() {
-    if (user % 2 === 0) {
+function ShowUsers()
+{
+    if(user %2 ===0)
+    {
         document.getElementById('hide').hidden = false;
         user++;
     }
-    else {
+    else
+    {
         document.getElementById('hide').hidden = true;
         user++;
     }
 }
-function ShowClass() {
-    if (form % 2 === 0) {
+function ShowClass()
+{
+    if(form%2===0)
+    {
         document.getElementById('hidetwo').hidden = false;
         form++;
     }
-    else {
+    else
+    {
         document.getElementById('hidetwo').hidden = true;
         form++;
     }

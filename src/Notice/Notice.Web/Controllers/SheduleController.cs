@@ -8,22 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Notice.Web.Controllers
 {
-    public class ClassController : Controller
+    public class SheduleController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult AddClass()
-        {
-            return View();
-        }
-        public IActionResult Profile()
-        {
-            return View();
-        }
-        public IActionResult EditClass()
+        public IActionResult AddShedule()
         {
             return View();
         }
