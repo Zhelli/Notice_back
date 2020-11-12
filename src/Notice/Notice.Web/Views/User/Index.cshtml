@@ -27,6 +27,21 @@
             <div class="left">
                 <button class="btn"><a class="link" asp-controller="User" asp-action="AddUser">Add User</a></button>
                 <h3 class="filter"><i>Filtering</i></h3>
+                <button class="btn" onclick="ShowUsers()">Users</button>
+                <div class="hide" id="hide">
+                    <div class="check">
+                        <input type="checkbox" id="pupil">
+                        <label for="pupil">Pupil</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="teacher">
+                        <label for="teacher">Teacher</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="administrator">
+                        <label for="administrator">Administrator</label>
+                    </div>
+                </div>
                 <button class="btn" onclick="ShowClass()">Class</button>
                 <div class="hide" id="hidetwo">
                     <div class="check">

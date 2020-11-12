@@ -15,5 +15,13 @@ namespace Notice.Web.Controllers
         {
             return View();
         }
+        public IActionResult AddEvent()
+        {
+            return View();
+        }
+        public IActionResult EditEvent()
+        {
+            return View();
+        }
     }
 }
