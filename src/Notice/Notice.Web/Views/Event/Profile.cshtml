@@ -26,12 +26,12 @@
                     <div class="thing m-2 two_left">
                         <h2 class="up">Name event</h2>
                         <hr>
-                        <input type="text" id="name_event">
+                        <p id="name_event">Event1</p>
                     </div>
                     <div class="thing m-2 two_right">
                         <h2 class="up">Event content</h2>
                         <hr>
-                        <textarea type="text" id="Event_content"></textarea>
+                        <p id="Event_content">Event content</p>
                     </div>
                 </div>
                 <div class="PupilsClass">
@@ -42,19 +42,18 @@
                         <h4>Petrov Petr Petrovich</h4>
                         <h4>Petrov Petr Petrovich</h4>
                         <h4>Petrov Petr Petrovich</h4>
-                        <select class="btn" style="margin-bottom: 1em;">
-                            <option value="Select">Select pupil</option>
-                        </select>
-                        <button class="btn">Add user</button>
                     </div>
                 </div>
                 <div class="two">
                     <div class="button m-2 two_left">
-                        <a href="">Add</a>
+                        <a asp-controller="Event" asp-action="EditEvent">Update</a>
                     </div>
                     <div class="button m-2 two_right">
-                        <a onClick="history.go(-1); return false;">Cancel</a>
+                        <a href="">Delete</a>
                     </div>
+                </div>
+                <div class="button m-2 center_block last">
+                    <a onClick="history.go(-1); return false;">Cancel</a>
                 </div>
             </div>
         </main>
