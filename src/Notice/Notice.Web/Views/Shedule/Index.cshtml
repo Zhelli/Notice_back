@@ -25,9 +25,39 @@
     <main>
         <div class="flex">
             <div class="left">
-                <button class="btn"><a class="link" asp-controller="Shedule" asp-action="AddShedule">Add Schedule</a></button>
+                <button class="btn"><a class="link" asp-controller="Shedule" asp-action="AddShedule">Add Shedule</a></button>
                 <h3 class="filter"><i>Filtering</i></h3>
-                <button class="btn" onclick="ShowClass()">Class</button>
+                <button class="btn" onclick="ShowUsers()">Class</button>
+                <div class="hide" id="hide">
+                    <div class="check">
+                        <input type="checkbox" id="1">
+                        <label for="1">1</label>
+                        <div class="check1">
+                            <input type="checkbox" id="1A">
+                            <label for="1A">1А</label>
+                        </div>
+                        <div class="check1">
+                            <input type="checkbox" id="1Б">
+                            <label for="1Б">1Б</label>
+                        </div>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="2">
+                        <label for="2">2</label>
+                        <div class="check1">
+                            <input type="checkbox" id="2A">
+                            <label for="2A">2А</label>
+                        </div>
+                        <div class="check1">
+                            <input type="checkbox" id="2Б">
+                            <label for="2Б">2Б</label>
+                        </div>
+                        <div class="check1">
+                            <input type="checkbox" id="2B">
+                            <label for="2B">2B</label>
+                        </div>
+                    </div>
+                </div>
                 <div class="hide" id="hidetwo">
                     <div class="check">
                         <input type="checkbox" id="1">
@@ -137,5 +167,6 @@
             </div>
         </div>
     </main>
+    <script src="~/js/admin.js"></script>
 </body>
 </html>
