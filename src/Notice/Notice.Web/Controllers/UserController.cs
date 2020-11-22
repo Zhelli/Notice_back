@@ -26,5 +26,13 @@ namespace Notice.Web.Controllers
         {
             return View();
         }
+        public IActionResult Edit2User()
+        {
+            return View();
+        }
+        public IActionResult ProfileUser()
+        {
+            return View();
+        }
     }
 }
