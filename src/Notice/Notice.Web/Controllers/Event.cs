@@ -8,22 +8,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Notice.Web.Controllers
 {
-    public class ClassController : Controller
+    public class Event : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult AddClass()
+        public IActionResult AddEvent()
+        {
+            return View();
+        }
+        public IActionResult EditEvent()
         {
             return View();
         }
         public IActionResult Profile()
-        {
-            return View();
-        }
-        public IActionResult EditClass()
         {
             return View();
         }

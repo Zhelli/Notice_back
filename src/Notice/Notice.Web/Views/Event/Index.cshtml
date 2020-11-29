@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User</title>
+    <title>Event</title>
     <link rel="stylesheet" href="~/css/style.css">
 </head>
 <body>
@@ -19,6 +19,7 @@
                 <a asp-controller="Shedule" asp-action="Index" class="div_link">Shedule</a>
                 <a asp-controller="Event" asp-action="Index" class="div_link">Event</a>
                 <a asp-controller="User" asp-action="ProfileUser" class="div_link">Cabinet</a>
+
             </div>
         </div>
     </header>
@@ -26,7 +27,7 @@
     <main>
         <div class="flex">
             <div class="left">
-                <button class="btn"><a class="link" asp-controller="User" asp-action="AddUser">Add User</a></button>
+                <button class="btn"><a class="link" asp-controller="Event" asp-action="AddEvent">Add Event</a></button>
                 <h3 class="filter"><i>Filtering</i></h3>
                 <button class="btn" onclick="ShowUsers()">Users</button>
                 <div class="hide" id="hide">
@@ -85,34 +86,34 @@
                 <div class="users">
                     <div class="user">
                         <div class="user-text left_user">
-                            <h3>Petrov Petr Petrovich</h3>
-                            <h3>Class 1-A</h3>
+                            <h3>Name event1</h3>
+                            <h3>Date1</h3>
                         </div>
                         <div class="right_user">
-                            <a class="dropdown-item" asp-controller="User" asp-action="Profile">Information</a>
-                            <a class="dropdown-item" asp-controller="User" asp-action="EditUser">Edit</a>
+                            <a class="dropdown-item" asp-controller="Event" asp-action="Profile">Information</a>
+                            <a class="dropdown-item" asp-controller="Event" asp-action="EditEvent">Edit</a>
                             <a class="dropdown-item" href="#">Delete</a>
                         </div>
                     </div>
                     <div class="user">
                         <div class="user-text left_user">
-                            <h3>Petrov Petr Petrovich</h3>
-                            <h3>Class 1-A</h3>
+                            <h3>Name event1</h3>
+                            <h3>Date1</h3>
                         </div>
                         <div class="right_user">
-                            <a class="dropdown-item" asp-controller="User" asp-action="Profile">Information</a>
-                            <a class="dropdown-item" asp-controller="User" asp-action="EditUser">Edit</a>
+                            <a class="dropdown-item" asp-controller="Event" asp-action="Profile">Information</a>
+                            <a class="dropdown-item" asp-controller="Event" asp-action="EditEvent">Edit</a>
                             <a class="dropdown-item" href="#">Delete</a>
                         </div>
                     </div>
                     <div class="user">
                         <div class="user-text left_user">
-                            <h3>Petrov Petr Petrovich</h3>
-                            <h3>Class 1-A</h3>
+                            <h3>Name event1</h3>
+                            <h3>Date1</h3>
                         </div>
                         <div class="right_user">
-                            <a class="dropdown-item" asp-controller="User" asp-action="Profile">Information</a>
-                            <a class="dropdown-item" asp-controller="User" asp-action="EditUser">Edit</a>
+                            <a class="dropdown-item" asp-controller="Event" asp-action="Profile">Information</a>
+                            <a class="dropdown-item" asp-controller="Event" asp-action="EditEvent">Edit</a>
                             <a class="dropdown-item" href="#">Delete</a>
                         </div>
                     </div>

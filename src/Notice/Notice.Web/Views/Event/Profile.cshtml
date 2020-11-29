@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Class</title>
+    <title>Add Event</title>
     <link rel="stylesheet" href="~/css/styleprofile.css">
 </head>
 <body>
@@ -18,6 +18,7 @@
                     <a asp-controller="Shedule" asp-action="Index" class="div_link">Shedule</a>
                     <a asp-controller="Event" asp-action="Index" class="div_link">Event</a>
                     <a asp-controller="User" asp-action="ProfileUser" class="div_link">Cabinet</a>
+
                 </div>
             </div>
         </header>
@@ -25,14 +26,14 @@
             <div class="center">
                 <div class="two">
                     <div class="thing m-2 two_left">
-                        <h2 class="up">Class name</h2>
+                        <h2 class="up">Name event</h2>
                         <hr>
-                        <input type="text" id="classname">
+                        <p id="name_event">Event1</p>
                     </div>
                     <div class="thing m-2 two_right">
-                        <h2 class="up">Teacher</h2>
+                        <h2 class="up">Event content</h2>
                         <hr>
-                        <input type="text" id="teacher">
+                        <p id="Event_content">Event content</p>
                     </div>
                 </div>
                 <div class="PupilsClass">
@@ -43,19 +44,18 @@
                         <h4>Petrov Petr Petrovich</h4>
                         <h4>Petrov Petr Petrovich</h4>
                         <h4>Petrov Petr Petrovich</h4>
-                        <select class="btn" style="margin-bottom: 1em;">
-                            <option value="Select">Select pupil</option>
-                        </select>
-                        <button class="btn">Add user</button>
                     </div>
                 </div>
                 <div class="two">
                     <div class="button m-2 two_left">
-                        <a href="">Add</a>
+                        <a asp-controller="Event" asp-action="EditEvent">Update</a>
                     </div>
                     <div class="button m-2 two_right">
-                        <a onClick="history.go(-1); return false;">Cancel</a>
+                        <a href="">Delete</a>
                     </div>
+                </div>
+                <div class="button m-2 center_block last">
+                    <a onClick="history.go(-1); return false;">Cancel</a>
                 </div>
             </div>
         </main>

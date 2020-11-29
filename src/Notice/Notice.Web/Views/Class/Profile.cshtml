@@ -1,41 +1,63 @@
-﻿
-@{
-    ViewData["Title"] = "Classes";
+﻿@{
+    ViewData["Title"] = "Home Page";
 }
-
-@section Head{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
     <link rel="stylesheet" href="~/css/styleprofile.css">
-}
+</head>
+<body>
+    <header>
+        <div class="div_header">
+            <a asp-controller="User" asp-action="Index"><img src="~/logo1.png" class="image"></a>
+            <div class="right_pos">
+                <a asp-controller="User" asp-action="Index" class="div_link">Users</a>
+                <a asp-controller="Class" asp-action="Index" class="div_link">Classes</a>
+                <a asp-controller="Shedule" asp-action="Index" class="div_link">Shedule</a>
+                <a asp-controller="Event" asp-action="Index" class="div_link">Event</a>
+                <a asp-controller="User" asp-action="ProfileUser" class="div_link">Cabinet</a>
 
-<div class="center">
-    <div class="two">
-        <div class="thing m-2 two_left">
-            <h2 class="up">Class name</h2>
-            <hr>
-            <h2>1-A</h2>
+            </div>
         </div>
-        <div class="thing m-2 two_right">
-            <h2 class="up">Teacher</h2>
-            <hr>
-            <h2>Ivanova Elena Ivanovna</h2>
+    </header>
+    <main>
+        <div class="center">
+            <div class="two">
+                <div class="thing m-2 two_left">
+                    <h2 class="up">Class name</h2>
+                    <hr>
+                    <h2>1-A</h2>
+                </div>
+                <div class="thing m-2 two_right">
+                    <h2 class="up">Teacher</h2>
+                    <hr>
+                    <h2>Ivanova Elena Ivanovna</h2>
+                </div>
+            </div>
+            <div class="PupilsClass">
+                <h2 class="up">Pupils</h2>
+                <div class="pupilblue">
+                    <h4>Petrov Petr Petrovich</h4>
+                    <h4>Petrov Petr Petrovich</h4>
+                    <h4>Petrov Petr Petrovich</h4>
+                    <h4>Petrov Petr Petrovich</h4>
+                    <h4>Petrov Petr Petrovich</h4>
+                </div>
+            </div>
+            <div class="two last">
+                <div class="button m-2 two_left">
+                    <a asp-controller="Class" asp-action="Index">Update</a>
+                </div>
+                <div class="button m-2 two_right">
+                    <a>Delete</a>
+                </div>
+            </div>
+            <div class="button m-2 center_block last">
+                <a onClick="history.go(-1); return false;">Cancel</a>
+            </div>
         </div>
-    </div>
-    <div class="PupilsClass">
-        <h2 class="up">Pupils</h2>
-        <div class="pupilblue">
-            <h4>Petrov Petr Petrovich</h4>
-            <h4>Petrov Petr Petrovich</h4>
-            <h4>Petrov Petr Petrovich</h4>
-            <h4>Petrov Petr Petrovich</h4>
-            <h4>Petrov Petr Petrovich</h4>
-        </div>
-    </div>
-    <div class="two last">
-        <div class="button m-2 two_left">
-            <a asp-controller="Class" asp-action="Index">Update</a>
-        </div>
-        <div class="button m-2 two_right">
-            <a>Delete</a>
-        </div>
-    </div>
-</div>
+    </main>
+</body>
+</html>

@@ -1,118 +1,150 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
+﻿@{
+    ViewData["Title"] = "Home Page";
 }
 
-@section Head{
-    <link rel="stylesheet" href="~/css/style.css">
-}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Classes</title>
+        <link rel="stylesheet" href="~/css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="div_header">
+                <a asp-controller="User" asp-action="Index"><img src="~/logo1.png" class="image"></a>
+                <div class="right_pos">
+                    <a asp-controller="User" asp-action="Index" class="div_link">Users</a>
+                    <a asp-controller="Class" asp-action="Index" class="div_link">Classes</a>
+                    <a asp-controller="Shedule" asp-action="Index" class="div_link">Shedule</a>
+                    <a asp-controller="Event" asp-action="Index" class="div_link">Event</a>
+                    <a asp-controller="User" asp-action="ProfileUser" class="div_link">Cabinet</a>
 
-<div class="flex">
-    <div class="left">
-        <button class="btn"><a class="link" asp-controller="Class" asp-action="AddClass">Add Class</a></button>
-        <h3 class="filter"><i>Filtering</i></h3>
-        <button class="btn" onclick="ShowClass()">Class</button>
-        <div class="hide" id="hidetwo">
-            <div class="check">
-                <input type="checkbox" id="1">
-                <label for="1">1</label>
-                <div class="check1">
-                    <input type="checkbox" id="1A">
-                    <label for="1A">1А</label>
-                </div>
-                <div class="check1">
-                    <input type="checkbox" id="1Б">
-                    <label for="1Б">1Б</label>
                 </div>
             </div>
-            <div class="check">
-                <input type="checkbox" id="2">
-                <label for="2">2</label>
-                <div class="check1">
-                    <input type="checkbox" id="2A">
-                    <label for="2A">2А</label>
-                </div>
-                <div class="check1">
-                    <input type="checkbox" id="2Б">
-                    <label for="2Б">2Б</label>
-                </div>
-                <div class="check1">
-                    <input type="checkbox" id="2B">
-                    <label for="2B">2B</label>
-                </div>
-            </div>
-            <div class="check">
-                <input type="checkbox" id="3">
-                <label for="3">2</label>
-                <div class="check1">
-                    <input type="checkbox" id="3A">
-                    <label for="3A">3А</label>
-                </div>
-                <div class="check1">
-                    <input type="checkbox" id="3Б">
-                    <label for="3Б">3Б</label>
-                </div>
-                <div class="check1">
-                    <input type="checkbox" id="3B">
-                    <label for="3B">3B</label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="right">
-        <div class="sear">
-            <div class="search">
-                <label for="find">Find</label>
-                <input type="text" id="find">
-            </div>
-        </div>
-        <div class="classes">
-            <div>
-                <div class="class">
-                    <div class="user-text left_user">
-                        <h2>1-A</h2>
+        </header>
+        <hr>
+        <main>
+            <div class="flex">
+                <div class="left">
+                    <button class="btn"><a class="link" asp-controller="Shedule" asp-action="AddClass">Add Class</a></button>
+                    <h3 class="filter"><i>Filtering</i></h3>
+                    <button class="btn" onclick="ShowUsers()">Class</button>
+                    <div class="hide" id="hide">
+                        <div class="check">
+                            <input type="checkbox" id="1">
+                            <label for="1">1</label>
+                            <div class="check1">
+                                <input type="checkbox" id="1A">
+                                <label for="1A">1А</label>
+                            </div>
+                            <div class="check1">
+                                <input type="checkbox" id="1Б">
+                                <label for="1Б">1Б</label>
+                            </div>
+                        </div>
+                        <div class="check">
+                            <input type="checkbox" id="2">
+                            <label for="2">2</label>
+                            <div class="check1">
+                                <input type="checkbox" id="2A">
+                                <label for="2A">2А</label>
+                            </div>
+                            <div class="check1">
+                                <input type="checkbox" id="2Б">
+                                <label for="2Б">2Б</label>
+                            </div>
+                            <div class="check1">
+                                <input type="checkbox" id="2B">
+                                <label for="2B">2B</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="right_user">
-                        <a class="dropdown-item" asp-controller="Class" asp-action="Profile">Information</a>
-                        <a class="dropdown-item" asp-controller="Class" asp-action="EditClass">Edit</a>
-                        <a class="dropdown-item" href="#">Delete</a>
-                    </div>
-                </div>
-                <div class="class_user" id="hide">
-                    <nav>
-                        <ol style="display: table; margin:0 auto;">
-                            <li>Petrov Petr Petrovich</li>
-                            <li>Petrov Petr Petrovich</li>
-                            <li>Petrov Petr Petrovich</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-            <div>
-                <div class="class">
-                    <div class="user-text left_user">
-                        <h2>1-A</h2>
-                    </div>
-                    <div class="right_user">
-                        <a class="dropdown-item" asp-controller="Class" asp-action="Profile">Information</a>
-                        <a class="dropdown-item" asp-controller="Class" asp-action="EditClass">Edit</a>
-                        <a class="dropdown-item" href="#">Delete</a>
+                    <div class="hide" id="hidetwo">
+                        <div class="check">
+                            <input type="checkbox" id="1">
+                            <label for="1">1</label>
+                            <div class="check1">
+                                <input type="checkbox" id="1A">
+                                <label for="1A">1А</label>
+                            </div>
+                            <div class="check1">
+                                <input type="checkbox" id="1Б">
+                                <label for="1Б">1Б</label>
+                            </div>
+                        </div>
+                        <div class="check">
+                            <input type="checkbox" id="2">
+                            <label for="2">2</label>
+                            <div class="check1">
+                                <input type="checkbox" id="2A">
+                                <label for="2A">2А</label>
+                            </div>
+                            <div class="check1">
+                                <input type="checkbox" id="2Б">
+                                <label for="2Б">2Б</label>
+                            </div>
+                            <div class="check1">
+                                <input type="checkbox" id="2B">
+                                <label for="2B">2B</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="class_user" id="hide2">
-                    <nav>
-                        <ol style="display: table; margin:0 auto;">
-                            <li>Petrov Petr Petrovich</li>
-                            <li>Petrov Petr Petrovich</li>
-                            <li>Petrov Petr Petrovich</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-@section Scripts {
-    <script src="~/js/admin.js"></script>
-}
+                <div class="right">
+                    <div class="sear">
+                        <div class="search">
+                            <label for="find">Find</label>
+                            <input type="text" id="find">
+                        </div>
+                    </div>
+                    <div class="classes">
+                        <div>
+                            <div class="class">
+                                <div class="user-text left_user">
+                                    <h2>1-A</h2>
+                                </div>
+                                <div class="right_user">
+                                    <a class="dropdown-item" asp-controller="Class" asp-action="Profile">Information</a>
+                                    <a class="dropdown-item" asp-controller="Class" asp-action="EditClass">Edit</a>
+                                    <a class="dropdown-item" href="#">Delete</a>
+                                </div>
+                            </div>
+                            <div class="class_user" id="hide">
+                                <nav>
+                                    <ol style="display: table; margin:0 auto;">
+                                        <li>Petrov Petr Petrovich</li>
+                                        <li>Petrov Petr Petrovich</li>
+                                        <li>Petrov Petr Petrovich</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="class">
+                                <div class="user-text left_user">
+                                    <h2>1-A</h2>
+                                </div>
+                                <div class="right_user">
+                                    <a class="dropdown-item" asp-controller="Class" asp-action="Profile">Information</a>
+                                    <a class="dropdown-item" asp-controller="Class" asp-action="EditClass">Edit</a>
+                                    <a class="dropdown-item" href="#">Delete</a>
+                                </div>
+                            </div>
+                            <div class="class_user" id="hide2">
+                                <nav>
+                                    <ol style="display: table; margin:0 auto;">
+                                        <li>Petrov Petr Petrovich</li>
+                                        <li>Petrov Petr Petrovich</li>
+                                        <li>Petrov Petr Petrovich</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="~/js/admin.js"></script>
+    </body>
+    </html>

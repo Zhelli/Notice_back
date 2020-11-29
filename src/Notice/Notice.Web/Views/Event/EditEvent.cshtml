@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Create User</title>
+    <title>Edit Event</title>
     <link rel="stylesheet" href="~/css/styleprofile.css">
 </head>
 <body>
@@ -26,43 +26,33 @@
         <div class="center">
             <div class="two">
                 <div class="thing m-2 two_left">
-                    <h2 class="up">Name</h2>
+                    <h2 class="up">Name event</h2>
                     <hr>
-                    <input type="text" id="name" placeholder="Petr">
+                    <input type="text" id="name_event" placeholder="Event1">
                 </div>
                 <div class="thing m-2 two_right">
-                    <h2 class="up">Surname</h2>
+                    <h2 class="up">Event content</h2>
                     <hr>
-                    <input type="text" id="surname" placeholder="Petrov">
+                    <textarea type="text" id="Event_content" placeholder="Event_conten1"></textarea>
                 </div>
             </div>
-            <div class="two">
-                <div class="thing m-2 two_left">
-                    <h2 class="up">Patronymic</h2>
-                    <hr>
-                    <input type="text" id="patronymic" placeholder="Petrovich">
-                </div>
-                <div class="thing m-2 two_right">
-                    <h2 class="up">Birthday</h2>
-                    <hr>
-                    <input type="date" id="birthday" placeholder="01.01.2011">
-                </div>
-            </div>
-            <div class="two">
-                <div class="thing m-2 two_left">
-                    <h2 class="up">Phone</h2>
-                    <hr>
-                    <input type="text" id="phone" placeholder="09712345678">
-                </div>
-                <div class="thing m-2 two_right">
-                    <h2 class="up">E-mail</h2>
-                    <hr>
-                    <input type="text" id="email" placeholder="petr.petrov@gmail.com">
+            <div class="PupilsClass">
+                <h2 class="up">Pupils</h2>
+                <div class="pupilblue" id="pupil">
+                    <h4>Petrov Petr Petrovich</h4>
+                    <h4>Petrov Petr Petrovich</h4>
+                    <h4>Petrov Petr Petrovich</h4>
+                    <h4>Petrov Petr Petrovich</h4>
+                    <h4>Petrov Petr Petrovich</h4>
+                    <select class="btn" style="margin-bottom: 1em;">
+                        <option value="Select">Select pupil</option>
+                    </select>
+                    <button class="btn">Add user</button>
                 </div>
             </div>
             <div class="two">
                 <div class="button m-2 two_left">
-                    <a asp-controller="User" asp-action="Index">Update</a>
+                    <a href="">Update</a>
                 </div>
                 <div class="button m-2 two_right">
                     <a href="">Delete</a>

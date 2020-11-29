@@ -17,17 +17,16 @@ header {
 }
 
 .right_user {
-    display: grid;
+    display:grid;
 }
 
 .div_link {
-    margin: 2em;
+    margin: 1em;
     text-align: center;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #34B9BE;
 }
-
     .dropdown-item:hover,
     .div_link:hover {
         color: black;
@@ -89,7 +88,7 @@ hr {
     font-size: 2.5em;
     text-align: left;
     padding: 0.5em;
-    padding-top: 0em;
+    padding-top:0em;
     padding-bottom: 0em;
 }
 

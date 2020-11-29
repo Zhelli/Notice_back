@@ -20,10 +20,10 @@ header {
 }
 
 .div_link {
-    margin: 2em;
+    margin: 1em;
     text-align: center;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #34B9BE;
 }
 
@@ -43,10 +43,13 @@ hr {
 
 .center {
     margin-top: 4em;
-    width: 80%;
+    width:80%;
     font-size: 1.2em;
     margin-left: auto;
     margin-right: auto;
+}
+.center_block {
+    
 }
 
 .m-2 {
@@ -103,17 +106,21 @@ hr {
         }
 
 input,
-select {
+select,
+textarea{
     margin-top: 0.5em;
     height: 2em;
     font-size: 1em;
 }
+.center_block {
 
+}
 .probel {
     margin-right: 25%;
 }
 
-input {
+input,
+textarea {
     width: 100%;
 }
 
@@ -139,14 +146,12 @@ select {
     text-align: center;
     margin-bottom: 2em;
 }
-
 .thing_some {
-    width: 66%;
+    width:66%;
     height: 2.5em;
-    margin-left: 20%;
+    margin-left:20%;
     margin-bottom: 2%;
 }
-
 .pupilblue {
     padding-right: 2em;
     padding-left: 2em;
