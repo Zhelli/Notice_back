@@ -30,6 +30,7 @@ namespace Notice.Web
             services.Configure<DbConnection>(Configuration.GetSection(DbConnection.ConnectionStrings));
 
             services.AddTransient<IBaseRepository, BaseRepository>();
+            services.AddTransient<IFileRepository, FileRepository>();
 
             services.AddControllersWithViews(options =>
             {

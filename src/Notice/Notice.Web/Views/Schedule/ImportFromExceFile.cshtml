@@ -1,0 +1,30 @@
+﻿@using Notice.Web.ViewModels
+@model LessonsViewModel
+@{
+    ViewData["Title"] = "ImportFromExceFile";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/styleprofile.css">
+}
+
+<h1>ImportFromExceFile</h1>
+
+<div>
+
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    @foreach (var lesson in Model.lessons)
+                    {
+                        <td>@lesson.ClassName</td>
+                        <td>@lesson.Subject</td>
+                        <td>@lesson.Classroom</td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
