@@ -35,9 +35,13 @@ namespace Notice.Web.Controllers
             Func<SqlDataReader, Lesson> func = reader => new Lesson(reader);
             
             List<Lesson> lessons = baseRepository.GettingData("GetAllLessons", func);
-            lessons = lessons.OrderBy(l => l.ClassName).ThenBy(l => l.NumberOfLesson).ToList();
 
-            return View(new LessonsViewModel() { lessons = lessons });
+            List<Class> classes = GetLessonsByClasses(lessons);
+
+
+            //lessons = lessons.OrderBy(l => l.ClassName).ThenBy(l => l.NumberOfLesson).ToList();
+
+            return View(new ScheduleViewModel() { Classes = classes });
         }
 
         [HttpGet]
@@ -50,8 +54,10 @@ namespace Notice.Web.Controllers
             };
 
             List<Lesson> lessons = baseRepository.GettingData("GetAllLessonsByClassName", func, paramValue);
+            
+            List<Class> classes = GetLessonsByClasses(lessons);
 
-            return View(new LessonsViewModel() { lessons = lessons });
+            return View(new ScheduleViewModel() { Classes = classes });
         }
 
         [HttpPost]
@@ -89,7 +95,7 @@ namespace Notice.Web.Controllers
                                 lesson.NumberOfLesson = numberOfLesson;
                                 lesson.Subject = rows.ElementAt(i).Cell(j).Value.ToString();
                                 lesson.Classroom = rows.ElementAt(i).Cell(j + 1).Value.ToString();
-                                lesson.DayOfWeek = daysOfWeek[2];
+                                lesson.DayOfWeek = daysOfWeek[j];
 
                                 if (lesson.Subject != "")
                                 {
@@ -110,7 +116,46 @@ namespace Notice.Web.Controllers
 
             fileRepository.ImportSchedule(lessons);
 
-            return View(new LessonsViewModel() { lessons = lessons });
+            List<Class> classes = GetLessonsByClasses(lessons);
+
+            return View("Index", new ScheduleViewModel() { Classes = classes });
+        }
+
+        private int IndexOfInList(List<Class> classes, string className)
+        {
+            foreach (var item in classes)
+            {
+                if (item.ClassName == className)
+                {
+                    return classes.IndexOf(item);
+                }
+            }
+            return -1;
+        }
+
+        private List<Class> GetLessonsByClasses(List<Lesson> lessons)
+        {
+            List<Class> classes = new List<Class>();
+            foreach (var item in lessons)
+            {
+                int index = IndexOfInList(classes, item.ClassName);
+                if (index == -1)
+                {
+                    List<Lesson> list = new List<Lesson>();
+                    list.Add(item);
+
+                    classes.Add(new Class(item.ClassName, list));
+                }
+                else
+                {
+                    classes[index].Lessons.Add(item);
+                    classes[index].Lessons = classes[index].Lessons.OrderBy(l => l.NumberOfLesson).ToList();
+                }
+            }
+
+            classes = classes.OrderBy(c => c.ClassName).ToList();
+
+            return classes;
         }
     }
 }

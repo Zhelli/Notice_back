@@ -32,64 +32,94 @@
             <input type="text" id="teacher">
         </div>
     </div>
-    <div class="shedule_day">
-        <h3 class="up"><i>Monday</i></h3>
-        <table>
-            <tr>
-                <th>#</th>
-                <th>Subject</th>
-                <th>Classroom</th>
-                <th>Teacher</th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <th>Lesson1</th>
-                <th>Classroom1</th>
-                <th>Teacher1</th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <th>Lesson1</th>
-                <th>Classroom1</th>
-                <th>Teacher1</th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <th>Lesson1</th>
-                <th>Classroom1</th>
-                <th>Teacher1</th>
-            </tr>
-        </table>
-        <button class="btn" onclick="ShowClass()">Add lesson</button>
+
+    @*<div class="two">
+        <div class="button m-2 two_left">
+            <a href="">Excel import Shedule</a>
+        </div>
+        <div class="button m-2 two_right">
+            <a href="">Pattern for Excel file</a>
+        </div>
+    </div>*@
+
+    @using (Html.BeginForm("ImportFromExceFile", "Schedule", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm-excel" }))
+    {
+        var text = "";
+        var str = "File chosen";
+
+<div class="button s-2 center_block last">
+    <h3 class="up">Import Excel-file:</h3>
+
+    <label for="fileExcel" class="btn"> Choose file
+        <input type="file" name="fileExcel" id="fileExcel" style="visibility:hidden; width:30%;" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+               onchange="@text = @str"/>
+    </label>
+    <p>@text<p>
+
+    <div>
+        <input type="submit" class="btn" value="Load"/>
     </div>
-    <div class="shedule_day">
-        <h3 class="up"><i>Tuesday</i></h3>
-        <table>
-            <tr>
-                <th>#</th>
-                <th>Subject</th>
-                <th>Classroom</th>
-                <th>Teacher</th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <th>Lesson1</th>
-                <th>Classroom1</th>
-                <th>Teacher1</th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <th>Lesson1</th>
-                <th>Classroom1</th>
-                <th>Teacher1</th>
-            </tr>
-            <tr>
-                <th>1</th>
-                <th>Lesson1</th>
-                <th>Classroom1</th>
-                <th>Teacher1</th>
-            </tr>
-        </table>
-        <button class="btn" onclick="ShowClass()">Add lesson</button>
-    </div>
+</div>
+    }
+
+    @*<div class="shedule_day">
+            <h3 class="up"><i>Monday</i></h3>
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Subject</th>
+                    <th>Classroom</th>
+                    <th>Teacher</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>Lesson1</th>
+                    <th>Classroom1</th>
+                    <th>Teacher1</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>Lesson1</th>
+                    <th>Classroom1</th>
+                    <th>Teacher1</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>Lesson1</th>
+                    <th>Classroom1</th>
+                    <th>Teacher1</th>
+                </tr>
+            </table>
+            <button class="btn" onclick="ShowClass()">Add lesson</button>
+        </div>*@
+    @*<div class="shedule_day">
+            <h3 class="up"><i>Tuesday</i></h3>
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Subject</th>
+                    <th>Classroom</th>
+                    <th>Teacher</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>Lesson1</th>
+                    <th>Classroom1</th>
+                    <th>Teacher1</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>Lesson1</th>
+                    <th>Classroom1</th>
+                    <th>Teacher1</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>Lesson1</th>
+                    <th>Classroom1</th>
+                    <th>Teacher1</th>
+                </tr>
+            </table>
+            <button class="btn" onclick="ShowClass()">Add lesson</button>
+        </div>*@
 </div>

@@ -29,11 +29,11 @@ namespace Notice.DAL.Entities
         {
             ClassName = reader.GetString(0);
             ClassId = reader.GetInt32(1);
-            TeacherId = reader.GetInt32(2); ;
+            TeacherId = reader.GetInt32(2);
             FullTeacherName = $"{reader.GetString(3)} {reader.GetString(4)[0]}.{reader.GetString(5)[0]}.";
             Subject = reader.GetString(6);
             DayOfWeek = reader.GetString(7);
-            NumberOfLesson = reader.GetInt32(8); ;
+            NumberOfLesson = reader.GetInt32(8);
             Classroom = reader.GetString(9);
         }
     }

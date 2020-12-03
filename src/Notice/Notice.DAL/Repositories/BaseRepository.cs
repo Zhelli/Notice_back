@@ -27,17 +27,21 @@ namespace Notice.DAL.Repositories
                 command.CommandType = CommandType.StoredProcedure;
 
                 connection.Open();
-
-                var reader = command.ExecuteReader();
-                if (reader.HasRows)
+                try
                 {
-                    while (reader.Read())
+                    var reader = command.ExecuteReader();
+                    if (reader.HasRows)
                     {
-                        list.Add(func(reader));
+                        while (reader.Read())
+                        {
+                            list.Add(func(reader));
+                        }
                     }
-                }
 
-                reader.Close();
+                    reader.Close();
+                }
+                catch
+                { }
             }
 
             return list;

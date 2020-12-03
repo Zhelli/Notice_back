@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Notice.Web.ViewModels
 {
-    public class LessonsViewModel
+    public class ScheduleViewModel
     {
-        public List<Lesson> lessons;
+        public List<Class> Classes;
     }
 }

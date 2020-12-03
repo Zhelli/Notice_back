@@ -13,7 +13,15 @@ namespace Notice.DAL.Entities
 
         public int TeacherId;
 
+        public List<Lesson> Lessons;
+
         public Class() { }
+
+        public Class(string className, List<Lesson> lessons)
+        {
+            this.ClassName = className;
+            this.Lessons = lessons;
+        }
 
         public Class(SqlDataReader reader)
         {
