@@ -1,4 +1,5 @@
-﻿
+﻿@using Notice.Web.ViewModels
+@model ScheduleViewModel
 @{
     ViewData["Title"] = "View schedule";
 }
@@ -67,72 +68,159 @@
             </div>
         </div>
         <div class="classes">
-            <div>
-                <div class="class">
-                    <div class="user-text left_user">
-                        <h2>1-A</h2>
+
+            @foreach (var item in Model.Classes)
+            {
+                var lessonsMon = item.Lessons.Where(l => l.DayOfWeek == "Mon").OrderBy(l => l.NumberOfLesson).ToList();
+                var lessonsTue = item.Lessons.Where(l => l.DayOfWeek == "Tue").OrderBy(l => l.NumberOfLesson).ToList();
+                var lessonsWed = item.Lessons.Where(l => l.DayOfWeek == "Wed").OrderBy(l => l.NumberOfLesson).ToList();
+                var lessonsThu = item.Lessons.Where(l => l.DayOfWeek == "Thu").OrderBy(l => l.NumberOfLesson).ToList();
+                var lessonsFri = item.Lessons.Where(l => l.DayOfWeek == "Fri").OrderBy(l => l.NumberOfLesson).ToList();
+                <div>
+                    <div class="class">
+                        <div class="user-text left_user">
+                            <h3>@item.ClassName</h3>
+                        </div>
+                    </div>
+                    <div class="shedule_day">
+                        <h2 class="up"><i>Monday</i></h2>
+                        <table>
+                            <tr>
+                                <th>№</th>
+                                <th>Subject</th>
+                                <th>Classroom</th>
+                                <th>Teacher</th>
+                            </tr>
+
+                            @foreach (var lesson in lessonsMon)
+                            {
+                                <tr>
+                                    <td>@lesson.NumberOfLesson</td>
+                                    <td>
+                                        @lesson.Subject
+                                    </td>
+                                    <td>
+                                        @lesson.Classroom
+                                    </td>
+                                    <td>
+                                        @lesson.FullTeacherName
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="shedule_day">
+                        <h2 class="up"><i>Tuesday</i></h2>
+                        <table>
+                            <tr>
+                                <th>№</th>
+                                <th>Subject</th>
+                                <th>Classroom</th>
+                                <th>Teacher</th>
+                            </tr>
+
+                            @foreach (var lesson in lessonsTue)
+                            {
+                                <tr>
+                                    <td>@lesson.NumberOfLesson</td>
+                                    <td>
+                                        @lesson.Subject
+                                    </td>
+                                    <td>
+                                        @lesson.Classroom
+                                    </td>
+                                    <td>
+                                        @lesson.FullTeacherName
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="shedule_day">
+                        <h2 class="up"><i>Wednesday</i></h2>
+                        <table>
+                            <tr>
+                                <th>№</th>
+                                <th>Subject</th>
+                                <th>Classroom</th>
+                                <th>Teacher</th>
+                            </tr>
+
+                            @foreach (var lesson in lessonsWed)
+                            {
+                                <tr>
+                                    <td>@lesson.NumberOfLesson</td>
+                                    <td>
+                                        @lesson.Subject
+                                    </td>
+                                    <td>
+                                        @lesson.Classroom
+                                    </td>
+                                    <td>
+                                        @lesson.FullTeacherName
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="shedule_day">
+                        <h2 class="up"><i>Thursday</i></h2>
+                        <table>
+                            <tr>
+                                <th>№</th>
+                                <th>Subject</th>
+                                <th>Classroom</th>
+                                <th>Teacher</th>
+                            </tr>
+
+                            @foreach (var lesson in lessonsThu)
+                            {
+                                <tr>
+                                    <td>@lesson.NumberOfLesson</td>
+                                    <td>
+                                        @lesson.Subject
+                                    </td>
+                                    <td>
+                                        @lesson.Classroom
+                                    </td>
+                                    <td>
+                                        @lesson.FullTeacherName
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="shedule_day">
+                        <h2 class="up"><i>Friday</i></h2>
+                        <table>
+                            <tr>
+                                <th>№</th>
+                                <th>Subject</th>
+                                <th>Classroom</th>
+                                <th>Teacher</th>
+                            </tr>
+
+                            @foreach (var lesson in lessonsFri)
+                            {
+                                <tr>
+                                    <td>@lesson.NumberOfLesson</td>
+                                    <td>
+                                        @lesson.Subject
+                                    </td>
+                                    <td>
+                                        @lesson.Classroom
+                                    </td>
+                                    <td>
+                                        @lesson.FullTeacherName
+                                    </td>
+                                </tr>
+                            }
+                        </table>
                     </div>
                 </div>
-                <div class="shedule_day">
-                    <h3 class="up"><i>Monday</i></h3>
-                    <table>
-                        <tr>
-                            <th>#</th>
-                            <th>Subject</th>
-                            <th>Classroom</th>
-                            <th>Teacher</th>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <th>Lesson1</th>
-                            <th>Classroom1</th>
-                            <th>Teacher1</th>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <th>Lesson1</th>
-                            <th>Classroom1</th>
-                            <th>Teacher1</th>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <th>Lesson1</th>
-                            <th>Classroom1</th>
-                            <th>Teacher1</th>
-                        </tr>
-                    </table>
-                </div>
                 <br>
-                <div class="shedule_day">
-                    <h3 class="up"><i>Tuesday</i></h3>
-                    <table>
-                        <tr>
-                            <th>#</th>
-                            <th>Subject</th>
-                            <th>Classroom</th>
-                            <th>Teacher</th>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <th>Lesson1</th>
-                            <th>Classroom1</th>
-                            <th>Teacher1</th>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <th>Lesson1</th>
-                            <th>Classroom1</th>
-                            <th>Teacher1</th>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <th>Lesson1</th>
-                            <th>Classroom1</th>
-                            <th>Teacher1</th>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+            }
+
         </div>
     </div>
 </div>
