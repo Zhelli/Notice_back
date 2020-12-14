@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User profile</title>
+    <title>Add Lessons</title>
     <link rel="stylesheet" href="~/css/styleprofile.css">
     <style>
         .dropbtn {
@@ -85,64 +85,93 @@
         <div class="center">
             <div class="two">
                 <div class="thing m-2 two_left">
-                    <h2 class="up">Name</h2>
+                    <h2 class="up">Subject</h2>
                     <hr>
-                    <h2>Petr</h2>
+                    <input type="text" id="subject" value="Subject1">
                 </div>
                 <div class="thing m-2 two_right">
-                    <h2 class="up">Surname</h2>
+                    <h2 class="up">Classroom</h2>
                     <hr>
-                    <h2>Petrov</h2>
+                    <input type="text" id="classroom" value="Classroom1">
                 </div>
             </div>
             <div class="two">
                 <div class="thing m-2 two_left">
-                    <h2 class="up">Patronymic</h2>
-                    <hr>
-                    <h2>Petrovich</h2>
-                </div>
-                <div class="thing m-2 two_right">
-                    <h2 class="up">Birthday</h2>
-                    <hr>
-                    <h2>01/01/2011</h2>
-                </div>
-            </div>
-            <div class="two">
-                <div class="thing m-2 two_left last">
-                    <h2 class="up">Phone</h2>
-                    <hr>
-                    <h2>0971234567</h2>
-                </div>
-                <div class="thing m-2 two_right last">
-                    <h2 class="up">E-mail</h2>
-                    <hr>
-                    <h2>petr.petrov@gmail.com</h2>
-                </div>
-            </div>
-            <div class="two">
-                <div class="thing m-2 two_left last">
-                    <h2 class="up">Role</h2>
-                    <hr>
-                    <h2>Pupil</h2>
-                </div>
-                <div class="thing m-2 two_right last">
                     <h2 class="up">Class</h2>
                     <hr>
-                    <h2>6-A</h2>
+                    <input type="text" id="class" value="7-A">
+                </div>
+                <div class="thing m-2 two_right">
+                    <h2 class="up">Teacher</h2>
+                    <hr>
+                    <input type="text" id="teacher" value="Teacher1">
                 </div>
             </div>
-            <div class="two">
-                <div class="button m-2 two_left">
-                    <a asp-controller="User" asp-action="EditUser">Update</a>
-                </div>
-                <div class="button m-2 two_right">
-                    <a href="">Delete</a>
-                </div>
+            <div class="shedule_day">
+                <h3 class="up"><i>Monday</i></h3>
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Subject</th>
+                        <th>Classroom</th>
+                        <th>Teacher</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>Lesson1</th>
+                        <th>Classroom1</th>
+                        <th>Teacher1</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>Lesson1</th>
+                        <th>Classroom1</th>
+                        <th>Teacher1</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>Lesson1</th>
+                        <th>Classroom1</th>
+                        <th>Teacher1</th>
+                    </tr>
+                </table>
+                <button class="btn" onclick="proverka_shedule()">Edit lesson</button>
             </div>
-            <div class="button m-2 center_block last">
-                <a onClick="history.go(-1); return false;">Cancel</a>
+            <div class="shedule_day">
+                <h3 class="up"><i>Tuesday</i></h3>
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Subject</th>
+                        <th>Classroom</th>
+                        <th>Teacher</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>Lesson1</th>
+                        <th>Classroom1</th>
+                        <th>Teacher1</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>Lesson1</th>
+                        <th>Classroom1</th>
+                        <th>Teacher1</th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+                        <th>Lesson1</th>
+                        <th>Classroom1</th>
+                        <th>Teacher1</th>
+                    </tr>
+                </table>
+                <button class="btn" onclick="proverka_shedule()">Edit lesson</button>
             </div>
         </div>
+        <div class="button m-2 center_block last">
+            <a onClick="history.go(-1); return false;">Cancel</a>
+        </div>
+        <script src="~/js/validation2.js"></script>
     </main>
 </body>
 </html>

@@ -7,18 +7,77 @@
     <meta charset="UTF-8">
     <title>Edit Class</title>
     <link rel="stylesheet" href="~/css/styleprofile.css">
+    <style>
+        .dropbtn {
+            background-color: white;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .bell {
+            width: 25px;
+            height: 25px;
+        }
+        .dropbtn:focus {
+            border: none;
+            outline: none;
+        }
+
+        .dropbtn:active {
+            border: none;
+            outline: none;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="div_header">
             <a asp-controller="User" asp-action="Index"><img src="~/logo1.png" class="image"></a>
             <div class="right_pos">
+                <div class="dropdown">
+                    <button class="dropbtn"><img src="~/images.jpeg" class="bell"></button>
+                    <div class="dropdown-content">
+                        <a href="#">Notification 1</a>
+                        <a href="#">Notification 2</a>
+                        <a href="#">Notification 3</a>
+                    </div>
+                </div>
                 <a asp-controller="User" asp-action="Index" class="div_link">Users</a>
                 <a asp-controller="Class" asp-action="Index" class="div_link">Classes</a>
                 <a asp-controller="Shedule" asp-action="Index" class="div_link">Shedule</a>
                 <a asp-controller="Event" asp-action="Index" class="div_link">Event</a>
                 <a asp-controller="User" asp-action="ProfileUser" class="div_link">Cabinet</a>
-
             </div>
         </div>
     </header>
@@ -49,7 +108,7 @@
             </div>
             <div class="two">
                 <div class="button m-2 two_left last">
-                    <a asp-controller="Class" asp-action="Index">Update</a>
+                    <a onclick="proverka_class()">Update</a>
                 </div>
                 <div class="button m-2 two_right last">
                     <a href="">Delete</a>
@@ -60,5 +119,6 @@
             </div>
         </div>
     </main>
+    <script src="~/js/validation2.js"></script>
 </body>
 </html>

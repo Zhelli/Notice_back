@@ -19,5 +19,9 @@ namespace Notice.Web.Controllers
         {
             return View();
         }
+        public IActionResult EditShedule()
+        {
+            return View();
+        }
     }
 }

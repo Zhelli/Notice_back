@@ -7,18 +7,77 @@
     <meta charset="UTF-8">
     <title>Edit Event</title>
     <link rel="stylesheet" href="~/css/styleprofile.css">
+    <style>
+        .dropbtn {
+            background-color: white;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .bell {
+            width: 25px;
+            height: 25px;
+        }
+        .dropbtn:focus {
+            border: none;
+            outline: none;
+        }
+
+        .dropbtn:active {
+            border: none;
+            outline: none;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="div_header">
             <a asp-controller="User" asp-action="Index"><img src="~/logo1.png" class="image"></a>
             <div class="right_pos">
+                <div class="dropdown">
+                    <button class="dropbtn"><img src="~/images.jpeg" class="bell"></button>
+                    <div class="dropdown-content">
+                        <a href="#">Notification 1</a>
+                        <a href="#">Notification 2</a>
+                        <a href="#">Notification 3</a>
+                    </div>
+                </div>
                 <a asp-controller="User" asp-action="Index" class="div_link">Users</a>
                 <a asp-controller="Class" asp-action="Index" class="div_link">Classes</a>
                 <a asp-controller="Shedule" asp-action="Index" class="div_link">Shedule</a>
                 <a asp-controller="Event" asp-action="Index" class="div_link">Event</a>
                 <a asp-controller="User" asp-action="ProfileUser" class="div_link">Cabinet</a>
-
             </div>
         </div>
     </header>
@@ -39,20 +98,38 @@
             <div class="PupilsClass">
                 <h2 class="up">Pupils</h2>
                 <div class="pupilblue" id="pupil">
-                    <h4>Petrov Petr Petrovich</h4>
-                    <h4>Petrov Petr Petrovich</h4>
-                    <h4>Petrov Petr Petrovich</h4>
-                    <h4>Petrov Petr Petrovich</h4>
-                    <h4>Petrov Petr Petrovich</h4>
+                    <h4 id="1">Petrov Petr Petrovich<button class="dropbtn" onclick="deleteEvent('1')"><img src="~/krestik.png" class="bell"></button></h4>
+                    <h4 id="2">Petrov Petr Petrovich<button class="dropbtn" onclick="deleteEvent('2')"><img src="~/krestik.png" class="bell"></button></h4>
+                    <h4 id="3">Petrov Petr Petrovich<button class="dropbtn" onclick="deleteEvent('3')"><img src="~/krestik.png" class="bell"></button></h4>
+                    <h4 id="4">Petrov Petr Petrovich<button class="dropbtn" onclick="deleteEvent('4')"><img src="~/krestik.png" class="bell"></button></h4>
+                    <h4 id="5">Petrov Petr Petrovich<button class="dropbtn" onclick="deleteEvent('5')"><img src="~/krestik.png" class="bell"></button></h4>
                     <select class="btn" style="margin-bottom: 1em;">
                         <option value="Select">Select pupil</option>
                     </select>
-                    <button class="btn">Add user</button>
+                    <button class="btn" onclick="addEvent(6)">Add user</button>
                 </div>
             </div>
+            <script>function proverka_event() {
+                    let name = document.getElementById("name_event").value;
+                    let proverka = true;
+                    if (name.trim() === "") {
+                        document.getElementById("name_event").style.border = "2px solid red";
+                        proverka = false;
+                    }
+                    let content = document.getElementById("event_content").value;
+                    if (content.trim() !== "") {
+                        document.getElementById("event_content").style.border = "2px solid red";
+                        proverka = false;
+                    }
+                    if (proverka === false) {
+                        alert("Data no valid");
+                    } else {
+                        alert("Succesful");
+                    }
+                }</script>
             <div class="two">
                 <div class="button m-2 two_left">
-                    <a href="">Update</a>
+                    <a onclick="proverka_event()">Update</a>
                 </div>
                 <div class="button m-2 two_right">
                     <a href="">Delete</a>
@@ -63,5 +140,7 @@
             </div>
         </div>
     </main>
+    <script src="~/js/validation2.js"></script>
+    <script src="~/js/add_delete_event.js"></script>
 </body>
 </html>

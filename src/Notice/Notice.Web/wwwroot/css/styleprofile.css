@@ -206,3 +206,6 @@ select {
             .shedule_day table tr th {
                 border: 1px solid #34B9BE;
             }
+.thin {
+    font-size:1em;
+}
