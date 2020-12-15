@@ -49,6 +49,11 @@ hr {
     margin-right: auto;
 }
 
+.two {
+    display: flex;
+    justify-content: space-between;
+}
+
 .m-2 {
     margin-bottom: 3%;
 }
@@ -61,9 +66,11 @@ hr {
     font-family: fantasy;
 }
 
-.two {
+.eventInput {
     display: flex;
-    margin-left: -6%;
+    flex-direction: column;
+    width: 65%;
+    margin: 0 auto;
 }
 
 .last {
@@ -75,13 +82,10 @@ hr {
     }
 
 .two_left {
-    width: 30%;
-    margin-left: 20%;
     margin-right: 5%;
 }
 
 .two_right {
-    width: 30%;
 }
 
 .button {
@@ -105,8 +109,9 @@ hr {
 input,
 select {
     margin-top: 0.5em;
-    height: 2em;
-    font-size: 1em;
+    font-size: 1rem;
+    padding: 4px;
+    font-family: Arial;
 }
 
 .probel {
@@ -148,14 +153,21 @@ select {
 }
 
 .pupilblue {
-    padding-right: 2em;
-    padding-left: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em 2em;
     margin-left: 2em;
     margin-right: 2em;
     border: 2px solid #34B9BE;
 }
+
+    .pupilblue h4 {
+        margin: 3%;
+    }
+
+    .pupilblue .btn {
+        width: 100%;
+        text-align: left;
+        font-size: 1rem;
+    }
 
 .centerbutton {
     padding-left: 53%;
@@ -201,3 +213,12 @@ select {
             .shedule_day table tr th {
                 border: 1px solid #34B9BE;
             }
+
+#Event_content {
+    resize: none;
+    width: 100%;
+    font-size: 1rem;
+    height: 10rem;
+    font-family: Arial;
+    padding: 4px;
+}

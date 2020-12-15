@@ -1,0 +1,76 @@
+﻿@using Notice.Web.ViewModels
+@model EventFullInfoViewModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/styleprofile.css">
+}
+
+<div class="center">
+    <div class="eventInput">
+            
+        @if (!@Model.Event.DateOfEvent.Equals(DateTime.MinValue))
+        {
+            <div class="thing m-2">
+                <h2 class="up">Date of Event</h2>
+                <hr>
+                <p>@Model.Event.DateOfEvent.ToShortDateString()</p>
+            </div>
+        }
+        <div class="thing m-2">
+            <h2 class="up">Name of event</h2>
+            <hr>
+            <p id="name_event">@Model.Event.Title</p>
+        </div>
+        <div class="thing m-2">
+            <h2 class="up">Description</h2>
+            <hr>
+            <p>@Model.Event.Description</p>
+        </div>
+    </div>
+
+        @if (Model.PupilParticipans.Count != 0 ||
+   Model.TeacherParticipants.Count != 0)
+        {
+            <div class="PupilsClass">
+
+                @if (Model.PupilParticipans.Count != 0)
+                {
+                    <h2 class="up">Pupils</h2>
+                    <div class="pupilblue" id="pupil">
+                        @foreach (var item in Model.PupilParticipans)
+                        {
+                            <h4>@item.ClassName   @item.FullName</h4>
+                        }
+                    </div>
+                }
+
+                @if (Model.TeacherParticipants.Count != 0)
+                {
+                    <h2 class="up">Teachers</h2>
+                    <div class="pupilblue" id="pupil">
+                        @foreach (var item in Model.TeacherParticipants)
+                        {
+                            <h4>@item.FullName</h4>
+                        }
+                    </div>
+                }
+
+            </div>
+        }
+
+
+        <div class="two">
+            <div class="button m-2 two_left">
+                <a asp-controller="Event" asp-action="EditEvent">Update</a>
+            </div>
+            <div class="button m-2 two_right">
+                <a href="">Delete</a>
+            </div>
+        </div>
+        <div class="button m-2 center_block last">
+            <a onClick="history.go(-1); return false;">Cancel</a>
+        </div>
+    </div>

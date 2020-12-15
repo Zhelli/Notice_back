@@ -40,7 +40,7 @@ namespace Notice.DAL.Repositories
 
                     reader.Close();
                 }
-                catch
+                catch (Exception ex)
                 { }
             }
 

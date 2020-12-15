@@ -17,7 +17,10 @@ header {
 }
 
 .right_user {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2%;
 }
 
 .div_link {

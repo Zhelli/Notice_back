@@ -1,0 +1,97 @@
+﻿@using Notice.Web.ViewModels
+@model ListEventViewModel
+@{
+    ViewData["Title"] = "Event";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/style.css">
+}
+
+<div class="flex">
+    <div class="left">
+        <button class="btn"><a class="link" asp-controller="Event" asp-action="AddEvent">Add Event</a></button>
+        <h3 class="filter"><i>Filtering</i></h3>
+        <button class="btn" onclick="ShowUsers()">Users</button>
+        <div class="hide" id="hide">
+            <div class="check">
+                <input type="checkbox" id="pupil">
+                <label for="pupil">Pupil</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="teacher">
+                <label for="teacher">Teacher</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="administrator">
+                <label for="administrator">Administrator</label>
+            </div>
+        </div>
+        <button class="btn" onclick="ShowClass()">Class</button>
+        <div class="hide" id="hidetwo">
+            <div class="check">
+                <input type="checkbox" id="1">
+                <label for="1">1</label>
+                <div class="check1">
+                    <input type="checkbox" id="1A">
+                    <label for="1A">1A</label>
+                </div>
+                <div class="check1">
+                    <input type="checkbox" id="1Б">
+                    <label for="1B">1B</label>
+                </div>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="2">
+                <label for="2">2</label>
+                <div class="check1">
+                    <input type="checkbox" id="2A">
+                    <label for="2A">2A</label>
+                </div>
+                <div class="check1">
+                    <input type="checkbox" id="2Б">
+                    <label for="2B">2B</label>
+                </div>
+                <div class="check1">
+                    <input type="checkbox" id="2B">
+                    <label for="2C">2C</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="sear">
+            <div class="search">
+                <label for="find">Find</label>
+                <input type="text" id="find">
+            </div>
+        </div>
+        <div class="users">
+
+            @foreach (var item in Model.Events)
+            {
+
+                <div class="user">
+                    <div class="user-text left_user">
+                        <h3>@item.Title</h3>
+                        @if (!item.DateOfEvent.Equals(DateTime.MinValue))
+                        {
+                            <h3>@item.DateOfEvent.ToShortDateString()</h3>
+                        }
+                    </div>
+                    <div class="right_user">
+                        <a class="dropdown-item" asp-controller="Event" asp-action="Profile" asp-route-eventId="@item.Id">More information</a>
+                        <a class="dropdown-item" asp-controller="Event" asp-action="EditEvent">Edit</a>
+                        <a class="dropdown-item" href="#">Delete</a>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/admin.js"></script>
+}

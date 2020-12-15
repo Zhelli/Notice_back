@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "EditEvent";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/styleprofile.css">
+}
+
+<div class="center">
+    <div class="two">
+        <div class="thing m-2">
+            <h2 class="up">Name event</h2>
+            <hr>
+            <input type="text" id="name_event" placeholder="Enter event name">
+        </div>
+        <div class="thing m-2">
+            <h2 class="up">Event content</h2>
+            <hr>
+            <textarea type="text" id="Event_content" placeholder="Enter information about event"></textarea>
+        </div>
+    </div>
+    <div class="PupilsClass">
+        <h2 class="up">Pupils</h2>
+        <div class="pupilblue" id="pupil">
+            <h4>Petrov Petr Petrovich</h4>
+            <h4>Petrov Petr Petrovich</h4>
+            <h4>Petrov Petr Petrovich</h4>
+            <h4>Petrov Petr Petrovich</h4>
+            <h4>Petrov Petr Petrovich</h4>
+            <select class="btn" style="margin-bottom: 1em;">
+                <option value="Select">Select pupil</option>
+            </select>
+            <button class="btn">Add user</button>
+        </div>
+    </div>
+    <div class="two">
+        <div class="button m-2 two_left">
+            <a href="">Update</a>
+        </div>
+        <div class="button m-2 two_right">
+            <a href="">Delete</a>
+        </div>
+    </div>
+    <div class="button m-2 center_block last">
+        <a onClick="history.go(-1); return false;">Cancel</a>
+    </div>
+</div>

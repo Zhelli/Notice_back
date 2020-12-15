@@ -7,8 +7,8 @@
     @RenderSection("Head")
 
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/header.css" />*@
+    <link rel="stylesheet" href="~/css/site.css" />*@
+    <link rel="stylesheet" href="~/css/header.css" />
 
 </head>
 <body>
@@ -16,9 +16,19 @@
         <div class="div_header">
             <a asp-controller="Home" asp-action="Index"><img src="~/logo1.png" class="image"></a>
             <div class="right_pos">
+                <div class="dropdown">
+                    <button class="dropbtn"><img src="~/bell.png" class="bell"></button>
+                    <div class="dropdown-content">
+                        <a href="#">Notification 1</a>
+                        <a href="#">Notification 2</a>
+                        <a href="#">Notification 3</a>
+                    </div>
+                </div>
                 <a asp-controller="User" asp-action="Index" class="div_link">Users</a>
                 <a asp-controller="Class" asp-action="Index" class="div_link">Classes</a>
                 <a asp-controller="Schedule" asp-action="Index" class="div_link">Schedule</a>
+                <a asp-controller="Event" asp-action="Index" class="div_link">Event</a>
+                <a asp-controller="User" asp-action="ProfileUser" class="div_link">Cabinet</a>
             </div>
         </div>
     </header>
