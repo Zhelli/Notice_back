@@ -7,15 +7,15 @@ namespace Notice.DAL.Entities
 {
     public class Event
     {
-        public int Id;
+        public int Id { get; set; }
 
-        public int AuthorId;
+        public int AuthorId { get; set; }
 
-        public string Title;
+        public string Title { get; set; }
 
-        public string Description;
+        public string Description { get; set; }
 
-        public DateTime DateOfEvent;
+        public DateTime DateOfEvent { get; set; }
 
         public Event() { }
 

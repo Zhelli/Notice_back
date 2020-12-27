@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="~/css/style.css">
 }
 
+@section Notification {
+    @foreach (var item in Model.notifications)
+    {
+        <a href="#">@item.Title</a>
+    }
+}
+
 <div class="flex">
     <div class="left">
         <button class="btn"><a class="link" asp-controller="Event" asp-action="AddEvent">Add Event</a></button>

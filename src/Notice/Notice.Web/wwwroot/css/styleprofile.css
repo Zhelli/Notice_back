@@ -222,3 +222,16 @@ select {
     font-family: Arial;
     padding: 4px;
 }
+
+.btn.addCancel {
+    color: white;
+    background-color: #66cace;
+    border: none;
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+    .btn.addCancel:hover {
+        background-color: #34B9BE;
+    }

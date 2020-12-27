@@ -15,6 +15,8 @@ namespace Notice.Web.ViewModels
 
         public DateTime DateOfEvent;
 
+        public int Id;
+
         public EventViewModel(string title, string description, DateTime date)
         {
             Title = title;

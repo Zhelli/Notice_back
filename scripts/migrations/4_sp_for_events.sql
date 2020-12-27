@@ -60,9 +60,13 @@ CREATE PROCEDURE AddNotificationForSchoolWorker
 @schoolWorkerId INT,
 @role NVARCHAR(1)
 AS
-INSERT INTO Notice.NotifyingPupil(EventId, RecipientPupilId, TypeOfUser)
+INSERT INTO Notice.NotifyingSchoolWorker(EventId, RecipientTeacherId, TypeOfUser)
 VALUES(@eventId, @schoolWorkerId, @role);
 GO
+
+
+exec AddNotificationForSchoolWorker 10, 14, 'T'
+ 
 
 CREATE PROCEDURE GetPupilsOfEventById
 @eventId INT
@@ -113,3 +117,10 @@ AS
 SELECT Email FROM Notice.SchoolWorker WHERE Id = @id;
 GO
 
+CREATE PROCEDURE GetNotifications
+@schoolWorkerId INT
+AS
+SELECT title, Event.Id from Notice.Event, Notice.NotifyingSchoolWorker
+WHERE Event.Id = NotifyingSchoolWorker.EventId AND 
+NotifyingSchoolWorker.RecipientTeacherId = @schoolWorkerId
+GO

@@ -17,6 +17,8 @@ namespace Notice.Web.Controllers
     {
         private readonly IBaseRepository baseRepository;
 
+        private const int ID = 17;
+
         public EventController(IBaseRepository baseRepository)
         {
             this.baseRepository = baseRepository;
@@ -30,7 +32,15 @@ namespace Notice.Web.Controllers
             List<Event> events = baseRepository.GettingData("GetAllEvents", func).OrderByDescending(x => x.DateOfEvent).ToList();
 
 
-            return View(new ListEventViewModel() { Events = events });
+
+            Dictionary<string, object> paramNamesAndValues = new Dictionary<string, object>()
+            {
+                ["@schoolWorkerId"] = ID
+            };
+
+            List<Notification> notifications = baseRepository.GettingData("GetNotifications", reader => new Notification(reader), paramNamesAndValues);
+
+            return View(new ListEventViewModel() { Events = events, notifications = notifications });
         }
 
         [HttpGet]
@@ -47,6 +57,54 @@ namespace Notice.Web.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult AddEvent(EventFullInfoViewModel eventFullInfo)
+        {
+            object d = eventFullInfo.Event.DateOfEvent;
+            if(d.Equals(new DateTime(1, 1, 1)))
+            {
+                d = DBNull.Value;
+            }
+            object desc = eventFullInfo.Event.Description;
+            if (string.IsNullOrEmpty(eventFullInfo.Event.Description))
+            {
+                desc = DBNull.Value;
+            }
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                ["@authorId"] = ID,
+                ["@title"] = eventFullInfo.Event.Title,
+                ["@description"] =  desc,
+                ["@dateOfEvent"] = d
+            };
+
+            int eventId = baseRepository.GettingData("AddEvent", reader => reader.GetInt32(0), parameters).First();
+
+            Dictionary<string, object> par = new Dictionary<string, object>()
+            {
+                ["@schoolWorkerId"] = ID,
+                ["@eventId"] = 10,
+                ["@role"] = "T"
+            };
+
+            baseRepository.GettingData("AddNotificationForSchoolWorker", reader => reader.GetInt32(0), par);
+
+
+            Func<SqlDataReader, string> funcCreatePupil = reader => reader.GetString(0);
+
+            Dictionary<string, object> paramNamesAndValues = new Dictionary<string, object>()
+            {
+                ["@id"] = ID
+            };
+
+            string email = baseRepository.GettingData("GetTecherEmailById", funcCreatePupil, paramNamesAndValues).First();
+
+            SendEmail(email, eventFullInfo.Event.Title);
+
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public IActionResult AddEventTo(int id)
         {
@@ -60,10 +118,10 @@ namespace Notice.Web.Controllers
 
             string email = baseRepository.GettingData("GetTecherEmailById", funcCreatePupil, paramNamesAndValues).First();
 
-            SendEmail(email);
+            SendEmail(email, "Christmas Party");
 
             //List<Teacher> teachers = baseRepository.GettingData("GetAllTeachers", funcCreateTeacher).OrderBy(x => x.FullName).ToList();
-            return RedirectToAction("AddEvent");
+            return RedirectToAction("Index");
 
             return View(new EventFullInfoViewModel()
             {
@@ -102,16 +160,16 @@ namespace Notice.Web.Controllers
             });
         }
 
-        private void SendEmail(string toEmail)
+        private void SendEmail(string toEmail, string eventTitle)
         {
             MailAddress from = new MailAddress("msjonny14@gmail.com", "Notice");
             MailAddress to = new MailAddress(toEmail);
             MailMessage m = new MailMessage(from, to);
-            m.Subject = "New notification";
+            m.Subject = "New notification in Notice!";
             m.Body = "<h2>Hello!</h2>" +
                 "<br>" +
-                "<h4>New event was added</h4>" +
-                "<h6>Go to Notice to check all details!</h6>";
+                "<h3>New event '" + eventTitle + "' was added</h3>" +
+                "<h5>Go to Notice to check all details!</h5>";
             m.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
             smtp.Credentials = new NetworkCredential("msjonny14@gmail.com", "jonny2012");
@@ -126,10 +184,6 @@ namespace Notice.Web.Controllers
                 //MessageBox.Show("Письмо не было отправлено", "Упс...", MessageBoxButtons.OK);
                 return;
             }
-
-            //MessageBox.Show("Письмо отправлено!", "Готово!", MessageBoxButtons.OK);
-
-            //textBox1.Clear();
 
             m.Dispose();
             smtp.Dispose();

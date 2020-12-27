@@ -8,10 +8,10 @@ namespace Notice.Web.ViewModels
 {
     public class EventFullInfoViewModel
     {
-        public Event Event;
+        public Event Event { get; set; } = new Event();
 
-        public List<Pupil> PupilParticipans;
+        public List<Pupil> PupilParticipans { get; set; }
 
-        public List<Teacher> TeacherParticipants;
+        public List<Teacher> TeacherParticipants { get; set; }
     }
 }

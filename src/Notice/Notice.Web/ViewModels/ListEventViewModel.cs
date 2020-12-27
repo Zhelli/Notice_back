@@ -9,5 +9,7 @@ namespace Notice.Web.ViewModels
     public class ListEventViewModel
     {
         public List<Event> Events;
+
+        public List<Notification> notifications;
     }
 }

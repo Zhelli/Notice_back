@@ -19,9 +19,7 @@
                 <div class="dropdown">
                     <button class="dropbtn"><img src="~/bell.png" class="bell"></button>
                     <div class="dropdown-content">
-                        <a href="#">Notification 1</a>
-                        <a href="#">Notification 2</a>
-                        <a href="#">Notification 3</a>
+                        @RenderSection("Notification", false)
                     </div>
                 </div>
                 <a asp-controller="User" asp-action="Index" class="div_link">Users</a>

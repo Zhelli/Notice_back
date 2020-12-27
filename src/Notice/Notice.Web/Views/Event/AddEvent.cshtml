@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="~/css/styleprofile.css">
 }
 
-@{ 
+@{
     Pupil pupil = new Pupil();
     Teacher teacher = new Teacher();
     List<Pupil> pupils = new List<Pupil>();
@@ -21,72 +21,76 @@
 }
 
 <div class="center">
-    <div class="eventInput">
-        @using (Html.BeginForm())
-        {
+
+
+    <form asp-action="AddEvent" method="post" asp-controller="Event" id="form">
+        <div class="eventInput">
             <div class="two">
                 <div class="thing m-2 two_left">
                     <h2 class="up">Name event</h2>
                     <hr>
-                    @*Html.EditorFor(model => model.Event.Title)*@
-                    <input type="text" id="name_event" placeholder="Enter event name">
+                    @* @Html.EditorFor(model => model.Event.Title)*@
+                    <input asp-for="Event.Title" type="text" id="name_event" placeholder="Enter event name">
                 </div>
                 <div class="thing m-2 two_right">
                     <h2 class="up">Date of event</h2>
                     <hr>
-                    @*Html.EditorFor(model => model.Event.DateOfEvent)*@
-                    <input type="date" id="birthday">
+                    @* @Html.EditorFor(model => model.Event.DateOfEvent)*@
+                    <input asp-for="Event.DateOfEvent" type="date" id="birthday">
                 </div>
             </div>
             <div class="thing m-2">
                 <h2 class="up">Description</h2>
                 <hr>
-                @*Html.EditorFor(model => model.Event.Description)*@
-                <textarea type="text" id="Event_content" placeholder="Enter information about event"></textarea>
+                @* @Html.EditorFor(model => model.Event.Description)*@
+                <textarea asp-for="Event.Description" type="text" id="Event_content" placeholder="Enter information about event"></textarea>
             </div>
-        }
-        </div>
-    <div class="PupilsClass">
-        <h2 class="up">Pupils</h2>
-        <div class="pupilblue" id="pupil">
-            <select id="pupilList" class="btn" style="margin-bottom: 1em;">
-                <option value="Select pupil">Select pupil</option>
-                @foreach (var item in ViewBag.Pupils.PupilParticipants)
-                {
-                    <option value="@item.Id">@item.ClassName  @item.FullName</option>
-                }
 
-            </select>
-            <button class="btn" onclick="addPupil(document.querySelector('#pupilList'))">Add user</button>
-            <div id="pupils"></div>
         </div>
+        <div class="PupilsClass">
+            <h2 class="up">Pupils</h2>
+            <div class="pupilblue" id="pupil">
+                <select id="pupilList" class="btn" style="margin-bottom: 1em;">
+                    <option value="Select pupil">Select pupil</option>
+                    @foreach (var item in ViewBag.Pupils.PupilParticipants)
+                    {
+                        <option value="@item.Id">@item.ClassName  @item.FullName</option>
+                    }
 
-        <h2 class="up">Teachers</h2>
-        <div class="pupilblue" id="pupil">
-            <select id="teacherList" class="btn" style="margin-bottom: 1em;">
-                <option value="Select teacher">Select teacher</option>
-                @foreach (var item in ViewBag.Pupils.TeacherParticipants)
-                {
-                    <option value="@item.Id">@item.FullName</option>
-                }
+                </select>
+          <button type="button" class="btn" onclick="addPupil(document.querySelector('#pupilList'))">Add user</button>
+                <div id="pupils"></div>
+            </div>
 
-            </select>
-            <button class="btn" onclick="addTeacher(document.querySelector('#teacherList'))">Add user</button>
-            <div id="teachers"></div> 
-        </div>
+            <h2 class="up">Teachers</h2>
+            <div class="pupilblue" id="pupil">
+                <select id="teacherList" class="btn" style="margin-bottom: 1em;">
+                    <option value="Select teacher">Select teacher</option>
+                    @foreach (var item in ViewBag.Pupils.TeacherParticipants)
+                    {
+                        <option value="@item.Id">@item.FullName</option>
+                    }
 
-    </div>
-    <div class="two">
-        <div class="button m-2 two_left">
-            @*<a href="">Add</a>*@
-            <a asp-controller="Event" asp-action="AddEventTo" asp-route-eventId="14">Add</a>
-        </div>
-        <div class="button m-2 two_right">
-            <a onClick="history.go(-1); return false;">Cancel</a>
-        </div>
-    </div>
+                </select>
+                <button type="button" class="btn" onclick="addTeacher(document.querySelector('#teacherList'))">Add user</button>
+                    <div id="teachers"></div>
 </div>
+
+        </div>
+        <div class="two">
+            <div class="button m-2 two_left">
+                @*<a href="">Add</a>*@
+                <input type="submit" class="btn addCancel" value="Add">
+            </div>
+
+            <div class="button m-2 two_right">
+                <a class="btn addCancel" onClick="history.go(-1); return false;">Cancel</a>
+            </div>
+        </div>
+        </form>
+</div>
+<script src="~/js/validation2.js"></script>
 <script src="~/js/add_delete_event.js"></script>
 <script>
-    
+
 </script>
